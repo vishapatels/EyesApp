@@ -11,7 +11,7 @@ extension Collection where Element == User {
     
     var userListProviders: [UserListDataProvider] {
         return compactMap { result in
-            UserListDataProvider(name: result.name!, image: result.profileImage!)
+            UserListDataProvider(name: result.name!, image: result.profileImage!,id: result.id)
         }
     }
 }

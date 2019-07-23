@@ -11,8 +11,6 @@ import Kingfisher
 
 final class ViewController: UIViewController {
 
-    
-   
     @IBOutlet weak var collectionView: UICollectionView!
     let model = UserListViewModel()
   
@@ -42,6 +40,12 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             cell.imageLbl.kf.setImage(with: url)
         }
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailList: DetailViewController
+        detailList  = storyboard?.instantiateViewController(withIdentifier: "DetailList") as! DetailViewController
+        detailList.id = model.usersAtIndex(atIndex: indexPath.row)?.id ?? 0
+        navigationController?.pushViewController(detailList, animated: true)
     }
 }
 

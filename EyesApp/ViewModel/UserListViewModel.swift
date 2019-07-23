@@ -13,10 +13,12 @@ struct UserListDataProvider {
     
     var name: String
     var image: String
+    var id: Int64
     
-    init(name: String, image: String ) {
+    init(name: String, image: String, id:Int64 ) {
         self.name = name
         self.image = image
+        self.id = id 
     }
 }
 

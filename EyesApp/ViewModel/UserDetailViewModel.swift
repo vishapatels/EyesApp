@@ -19,11 +19,25 @@ struct UserDetailDataProvider {
     }
 }
 class UserDetailViewModel {
-   //  private var userInfos = UserDetailModel()
+    private var userDetail: [UserDetailDataProvider]?
+    
+    var data: String {
+        return userDetail![0].data
+    }
+    var type: String {
+        return userDetail![0].type
+    }
+    
 }
 extension UserDetailViewModel: ManagerInjected {
     
-    func getUserDetail(id: String , completion complete: @escaping(ServiceResult<Bool>) -> Void) {
+    func getUserDetail(id: String ,ignoreCache: Bool, completion complete: @escaping(ServiceResult<Bool>) -> Void) {
+        let dataExist = !ignoreCache && userDetailManager.getUserDetailFromCached() != nil
+        if dataExist {
+            self.userDetail = userDetailManager.getUserDetailFromCached()
+            complete(.success(true))
+            
+        }
         userDetailManager.getUserDetail(id: "1") { [weak self] result in
             guard let self = self else {
                 complete(.success(false))
@@ -31,7 +45,7 @@ extension UserDetailViewModel: ManagerInjected {
             }
             switch result {
             case .success(let userDetail):
-             //   self.userInfos = userInfos
+                self.userDetail = userDetail
                 complete(.success(true))
             case .failure(let error):
                 complete(.failure(error!))

@@ -106,10 +106,10 @@
             </objects>
             <point key="canvasLocation" x="639.20000000000005" y="-231.63418290854574"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="uAj-CE-COy">
             <objects>
-                <viewController id="mRf-Ea-lKB" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailList" id="mRf-Ea-lKB" customClass="DetailViewController" customModule="EyesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="16m-8R-D6Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

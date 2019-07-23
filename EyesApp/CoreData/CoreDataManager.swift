@@ -2,7 +2,7 @@
 //  CoreDataManager.swift
 //  EyesApp
 //
-//  Created by smitesh patel on 2019-07-22.
+//  Created by Visha Shanghvi on 2019-07-22.
 //  Copyright © 2019 Visha Shanghvi. All rights reserved.
 //
 
@@ -65,6 +65,20 @@ final class CoreDataManager: NSObject {
         do {
             let users = try managedObjectContext.fetch(fetchRequest)
             return users
+        } catch let error {
+            print(error)
+            return nil
+        }
+    }
+    
+    func fetchUsersContent() -> [Content]? {
+        let managedObjectContext = persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<Content>(entityName: CoreDataManager.entityName)
+        let sortDescriptor1 = NSSortDescriptor(key: "id", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor1]
+        do {
+            let usersDetail = try managedObjectContext.fetch(fetchRequest)
+            return usersDetail
         } catch let error {
             print(error)
             return nil
