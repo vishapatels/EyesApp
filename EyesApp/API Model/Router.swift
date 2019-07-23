@@ -55,9 +55,34 @@ enum Router {
             return "/users"
             
         case .getUserDetailInfo(let id):
-            return "content?userId=" + id
+            return ("content?userId=" + id).stringByAddingPercentEncodingForRFC3986()
         }
     }
     
 }
 
+extension String {
+    func stringByAddingPercentEncodingForRFC3986() -> String? {
+        let unreserved = "-._~/?"
+        let allowed = NSMutableCharacterSet.alphanumeric()
+        allowed.addCharacters(in: unreserved)
+        return stringByAddingPercentEncodingWithAllowedCharacters(allowed)
+    }
+    
+    public func stringByAddingPercentEncodingForFormData(plusForSpace: Bool=false) -> String? {
+        let unreserved = "*-._"
+        let allowed = NSMutableCharacterSet.alphanumeric()
+        allowed.addCharacters(in: unreserved)
+        
+        if plusForSpace {
+            allowed.addCharacters(in: " ")
+        }
+        
+        var encoded = stringByAddingPercentEncodingWithAllowedCharacters(allowed)
+        if plusForSpace {
+            encoded = encoded?.stringByReplacingOccurrencesOfString(" ",
+                                                                    withString: "+")
+        }
+        return encoded
+    }
+}

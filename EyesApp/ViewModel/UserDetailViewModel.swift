@@ -31,14 +31,14 @@ class UserDetailViewModel {
 }
 extension UserDetailViewModel: ManagerInjected {
     
-    func getUserDetail(id: String ,ignoreCache: Bool, completion complete: @escaping(ServiceResult<Bool>) -> Void) {
-        let dataExist = !ignoreCache && userDetailManager.getUserDetailFromCached() != nil
+    func getUserDetail(id: Int64 ,ignoreCache: Bool, completion complete: @escaping(ServiceResult<Bool>) -> Void) {
+        let dataExist = !ignoreCache && userDetailManager.getUserDetailFromCached(id: id) != nil
         if dataExist {
-            self.userDetail = userDetailManager.getUserDetailFromCached()
+            self.userDetail = userDetailManager.getUserDetailFromCached(id: id)
             complete(.success(true))
             
         }
-        userDetailManager.getUserDetail(id: "1") { [weak self] result in
+        userDetailManager.getUserDetail(id: String(id)) { [weak self] result in
             guard let self = self else {
                 complete(.success(false))
                 return

@@ -27,7 +27,7 @@ final class UserListManager: UserListManagerProtocol, ManagerInjected {
     }
     
     func getUserInfoList(completionHandler complete: @escaping(ServiceResult<[UserListDataProvider]>) -> Void) {
-        var logger: NetworkLogger = NetworkLogger()
+        //var logger: NetworkLogger = NetworkLogger()
         DispatchQueue.episodeManager.async {
             APIService.shared.performRequest(router: .getUserList(), completionHandler: { [weak self] result in
                 switch result {

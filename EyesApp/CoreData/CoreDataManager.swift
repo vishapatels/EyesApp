@@ -14,6 +14,7 @@ final class CoreDataManager: NSObject {
     
     static let shared = CoreDataManager()
     private static let entityName = "User"
+    private static let contentEntity = "Content"
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {
         /*
@@ -71,11 +72,10 @@ final class CoreDataManager: NSObject {
         }
     }
     
-    func fetchUsersContent() -> [Content]? {
+    func fetchUserContent(forUser id: Int64) -> [Content]? {
         let managedObjectContext = persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<Content>(entityName: CoreDataManager.entityName)
-        let sortDescriptor1 = NSSortDescriptor(key: "id", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor1]
+        let fetchRequest = NSFetchRequest<Content>(entityName: CoreDataManager.contentEntity)
+        fetchRequest.predicate = NSPredicate(format: "id = %d", id)
         do {
             let usersDetail = try managedObjectContext.fetch(fetchRequest)
             return usersDetail

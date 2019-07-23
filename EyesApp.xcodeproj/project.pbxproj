@@ -27,6 +27,7 @@
 		108B1BDB22E61D5B002BDF8E /* ManagerInjected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108B1BDA22E61D5B002BDF8E /* ManagerInjected.swift */; };
 		108B1BE422E63DE3002BDF8E /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108B1BE322E63DE3002BDF8E /* Collection+Extension.swift */; };
 		108B1BE622E642F4002BDF8E /* UsersListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108B1BE522E642F4002BDF8E /* UsersListCell.swift */; };
+		10B2D07122E73B0F0081C57C /* Hero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B2D06F22E739BE0081C57C /* Hero.framework */; };
 		10B5AC2422E67B8100B008BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B5AC2322E67B8100B008BE /* Main.storyboard */; };
 		10B5AE7022E6810900B008BE /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B5AE6F22E6810900B008BE /* Kingfisher.framework */; };
 		10B5AE7A22E681BF00B008BE /* Gibson-Bold-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10B5AE7422E6817E00B008BE /* Gibson-Bold-Italic.otf */; };
@@ -62,6 +63,7 @@
 		108B1BDA22E61D5B002BDF8E /* ManagerInjected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerInjected.swift; sourceTree = "<group>"; };
 		108B1BE322E63DE3002BDF8E /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 		108B1BE522E642F4002BDF8E /* UsersListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListCell.swift; sourceTree = "<group>"; };
+		10B2D06F22E739BE0081C57C /* Hero.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Hero.framework; path = Carthage/Build/iOS/Hero.framework; sourceTree = "<group>"; };
 		10B5AC2322E67B8100B008BE /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		10B5AE6F22E6810900B008BE /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		10B5AE7222E6817E00B008BE /* Gibson-Semibold-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gibson-Semibold-Italic.otf"; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10B2D07122E73B0F0081C57C /* Hero.framework in Frameworks */,
 				10B5AE7022E6810900B008BE /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,6 +202,7 @@
 		10B5AC4322E680D100B008BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				10B2D06F22E739BE0081C57C /* Hero.framework */,
 				10B5AE6F22E6810900B008BE /* Kingfisher.framework */,
 			);
 			name = Frameworks;
@@ -305,6 +309,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Hero.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (

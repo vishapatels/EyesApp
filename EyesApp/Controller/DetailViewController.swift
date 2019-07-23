@@ -15,7 +15,7 @@ class DetailViewController: UIViewController {
     let model = UserDetailViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        model.getUserDetail(id: String(id),ignoreCache: false, completion: { [weak self] (result) in
+        model.getUserDetail(id: id,ignoreCache: false, completion: { [weak self] (result) in
             switch result {
             case .success:
                print("success")

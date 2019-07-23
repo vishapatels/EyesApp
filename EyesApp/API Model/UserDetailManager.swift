@@ -11,14 +11,14 @@ import Foundation
 protocol UserDetailManagerProtocol {
     func getUserDetail(id:String, completionHandler complete: @escaping(ServiceResult<[UserDetailDataProvider]>) -> Void)
     
-    func getUserDetailFromCached() -> [UserDetailDataProvider]?
+    func getUserDetailFromCached(id: Int64) -> [UserDetailDataProvider]?
 }
 
 
 final class UserDetailManager: UserDetailManagerProtocol, ManagerInjected {
     
-    func getUserDetailFromCached() -> [UserDetailDataProvider]? {
-        return coreDataManager.fetchUsersContent()?.userDetailProviders
+    func getUserDetailFromCached(id: Int64) -> [UserDetailDataProvider]? {
+        return coreDataManager.fetchUserContent(forUser: id)?.userDetailProviders
     }
     
     func getUserDetail(id:String, completionHandler complete: @escaping(ServiceResult<[UserDetailDataProvider]>) -> Void) {
