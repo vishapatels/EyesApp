@@ -8,7 +8,7 @@
 
 import UIKit
 import Kingfisher
-import Hero
+
 
 final class ViewController: UIViewController {
 

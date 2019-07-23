@@ -7,11 +7,11 @@
 //
 
 import UIKit
+//import Koloda
 
 class DetailViewController: UIViewController {
 
-    //added
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
     var id: Int64 = 0
     let model = UserDetailViewModel()
     override func viewDidLoad() {
@@ -19,21 +19,31 @@ class DetailViewController: UIViewController {
         model.getUserDetail(id: id,ignoreCache: false, completion: { [weak self] (result) in
             switch result {
             case .success:
-               print("success")
+              self?.collectionView.reloadData()
             case .failure(let err):
                 print(err)
             }
         })
-        
-       print(model.usersDetailAtIndex(atIndex: 0)?.data)
-         print(model.usersDetailAtIndex(atIndex: 1)?.data)
-         print(model.usersDetailAtIndex(atIndex: 2)?.data)
-        
-        
+    }
+}
+
+extension DetailViewController : UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return model.numberOfRows
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailList", for: indexPath) as! DetailViewCell
+        if(model.usersDetailAtIndex(atIndex: indexPath.row)?.type == "text" ) {
+            cell.label.text = model.usersDetailAtIndex(atIndex: indexPath.row)?.data
         }
-       
+        if(model.usersDetailAtIndex(atIndex: indexPath.row)?.type == "image" ) {
+                if let url = URL(string: model.usersDetailAtIndex(atIndex: indexPath.row)?.data ?? "NA") {
+                    cell.image.kf.setImage(with: url)
+                }
+        }
+        return cell
+    }
     
 }
-extension DetailViewController {
-    
-}
+

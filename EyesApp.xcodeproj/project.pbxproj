@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1037EBA222E7A334001BBC89 /* DetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1037EBA122E7A334001BBC89 /* DetailViewCell.swift */; };
 		107361AA22E6A2DB009E2B67 /* EyesApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 107361A822E6A2DB009E2B67 /* EyesApp.xcdatamodeld */; };
 		107361AD22E6A44E009E2B67 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107361AC22E6A44E009E2B67 /* CoreDataManager.swift */; };
 		107F514222E6950A0076517B /* UserDetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107F514122E6950A0076517B /* UserDetailManager.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1037EBA122E7A334001BBC89 /* DetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCell.swift; sourceTree = "<group>"; };
 		107361A922E6A2DB009E2B67 /* EyesApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EyesApp.xcdatamodel; sourceTree = "<group>"; };
 		107361AC22E6A44E009E2B67 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		107F514122E6950A0076517B /* UserDetailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailManager.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				108B1BB622E6190E002BDF8E /* ViewController.swift */,
 				108B1BE522E642F4002BDF8E /* UsersListCell.swift */,
 				107F514722E69F740076517B /* DetailViewController.swift */,
+				1037EBA122E7A334001BBC89 /* DetailViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				108B1BDB22E61D5B002BDF8E /* ManagerInjected.swift in Sources */,
 				107F514622E6978F0076517B /* UserDetailViewModel.swift in Sources */,
 				108B1BC822E619AC002BDF8E /* CoreServiceCodable.swift in Sources */,
+				1037EBA222E7A334001BBC89 /* DetailViewCell.swift in Sources */,
 				108B1BD822E61D0D002BDF8E /* UserListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

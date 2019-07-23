@@ -24,6 +24,9 @@ class UserDetailViewModel {
     func usersDetailAtIndex(atIndex index: Int) -> UserDetailDataProvider? {
         return userDetail?[index]
     }
+    var numberOfRows: Int {
+        return userDetail?.count ?? 0
+    }
     
 }
 extension UserDetailViewModel: ManagerInjected {
