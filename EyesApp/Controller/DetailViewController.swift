@@ -18,8 +18,9 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         let layout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-       
+        showLoadingView()
         model.getUserDetail(id: id,ignoreCache: true, completion: { [weak self] (result) in
+            self?.removeLoadingView()
             switch result {
             case .success:
               self?.collectionView.reloadData()

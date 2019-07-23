@@ -17,7 +17,9 @@ final class ViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        showLoadingView()
         model.getUserList(ignoreCache: true, completion: { [weak self] (result) in
+            self?.removeLoadingView()
             switch result {
             case .success:
                 self?.collectionView.reloadData()

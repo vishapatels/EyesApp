@@ -29,6 +29,11 @@
 		108B1BE422E63DE3002BDF8E /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108B1BE322E63DE3002BDF8E /* Collection+Extension.swift */; };
 		108B1BE622E642F4002BDF8E /* UsersListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108B1BE522E642F4002BDF8E /* UsersListCell.swift */; };
 		10B2D07122E73B0F0081C57C /* Hero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B2D06F22E739BE0081C57C /* Hero.framework */; };
+		10B2D07422E7C5D80081C57C /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B2D07322E7C5D80081C57C /* UIViewController+Extensions.swift */; };
+		10B2D07822E7C6130081C57C /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10B2D07622E7C6130081C57C /* LoadingView.xib */; };
+		10B2D07922E7C6130081C57C /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B2D07722E7C6130081C57C /* LoadingView.swift */; };
+		10B2D07B22E7C6E50081C57C /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B2D07A22E7C6E50081C57C /* UIView+extensions.swift */; };
+		10B2D07E22E7C74C0081C57C /* NibFileLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B2D07D22E7C74B0081C57C /* NibFileLoadable.swift */; };
 		10B5AC2422E67B8100B008BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B5AC2322E67B8100B008BE /* Main.storyboard */; };
 		10B5AE7022E6810900B008BE /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B5AE6F22E6810900B008BE /* Kingfisher.framework */; };
 		10B5AE7A22E681BF00B008BE /* Gibson-Bold-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10B5AE7422E6817E00B008BE /* Gibson-Bold-Italic.otf */; };
@@ -66,6 +71,11 @@
 		108B1BE322E63DE3002BDF8E /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 		108B1BE522E642F4002BDF8E /* UsersListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListCell.swift; sourceTree = "<group>"; };
 		10B2D06F22E739BE0081C57C /* Hero.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Hero.framework; path = Carthage/Build/iOS/Hero.framework; sourceTree = "<group>"; };
+		10B2D07322E7C5D80081C57C /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		10B2D07622E7C6130081C57C /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		10B2D07722E7C6130081C57C /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		10B2D07A22E7C6E50081C57C /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
+		10B2D07D22E7C74B0081C57C /* NibFileLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibFileLoadable.swift; sourceTree = "<group>"; };
 		10B5AC2322E67B8100B008BE /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		10B5AE6F22E6810900B008BE /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		10B5AE7222E6817E00B008BE /* Gibson-Semibold-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gibson-Semibold-Italic.otf"; sourceTree = "<group>"; };
@@ -119,6 +129,8 @@
 		108B1BB122E6190E002BDF8E /* EyesApp */ = {
 			isa = PBXGroup;
 			children = (
+				10B2D07C22E7C7330081C57C /* Protocols */,
+				10B2D07222E7C5C30081C57C /* Extensions */,
 				107361AB22E6A439009E2B67 /* CoreData */,
 				108B1BE222E63DC1002BDF8E /* CoreUtilities */,
 				108B1BD922E61D4D002BDF8E /* Injection */,
@@ -181,6 +193,7 @@
 		108B1BD222E61A5B002BDF8E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				10B2D07522E7C6130081C57C /* Loading */,
 				10B5AC2322E67B8100B008BE /* Main.storyboard */,
 			);
 			path = View;
@@ -200,6 +213,32 @@
 				108B1BE322E63DE3002BDF8E /* Collection+Extension.swift */,
 			);
 			path = CoreUtilities;
+			sourceTree = "<group>";
+		};
+		10B2D07222E7C5C30081C57C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				10B2D07322E7C5D80081C57C /* UIViewController+Extensions.swift */,
+				10B2D07A22E7C6E50081C57C /* UIView+extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		10B2D07522E7C6130081C57C /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				10B2D07622E7C6130081C57C /* LoadingView.xib */,
+				10B2D07722E7C6130081C57C /* LoadingView.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		10B2D07C22E7C7330081C57C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				10B2D07D22E7C74B0081C57C /* NibFileLoadable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		10B5AC4322E680D100B008BE /* Frameworks */ = {
@@ -295,6 +334,7 @@
 				108B1BBC22E61914002BDF8E /* Assets.xcassets in Resources */,
 				10B5AC2422E67B8100B008BE /* Main.storyboard in Resources */,
 				10B5AE7B22E681C100B008BE /* Gibson-Bold.otf in Resources */,
+				10B2D07822E7C6130081C57C /* LoadingView.xib in Resources */,
 				10B5AE7E22E681C900B008BE /* Gibson-Light.otf in Resources */,
 				10B5AE7C22E681C900B008BE /* Gibson-Italic.otf in Resources */,
 			);
@@ -331,11 +371,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10B2D07B22E7C6E50081C57C /* UIView+extensions.swift in Sources */,
 				108B1BD622E61C51002BDF8E /* UserListManager.swift in Sources */,
 				108B1BB722E6190E002BDF8E /* ViewController.swift in Sources */,
 				108B1BB322E6190E002BDF8E /* AppDelegate.swift in Sources */,
 				107361AA22E6A2DB009E2B67 /* EyesApp.xcdatamodeld in Sources */,
+				10B2D07E22E7C74C0081C57C /* NibFileLoadable.swift in Sources */,
 				107361AD22E6A44E009E2B67 /* CoreDataManager.swift in Sources */,
+				10B2D07922E7C6130081C57C /* LoadingView.swift in Sources */,
 				108B1BCE22E61A17002BDF8E /* Loggable.swift in Sources */,
 				108B1BCA22E619D0002BDF8E /* Router.swift in Sources */,
 				108B1BD422E61ABD002BDF8E /* UserListModel.swift in Sources */,
@@ -343,6 +386,7 @@
 				107F514822E69F740076517B /* DetailViewController.swift in Sources */,
 				108B1BE422E63DE3002BDF8E /* Collection+Extension.swift in Sources */,
 				107F514222E6950A0076517B /* UserDetailManager.swift in Sources */,
+				10B2D07422E7C5D80081C57C /* UIViewController+Extensions.swift in Sources */,
 				107F514422E6952D0076517B /* UserDetailModel.swift in Sources */,
 				108B1BCC22E619EC002BDF8E /* APIService.swift in Sources */,
 				108B1BDB22E61D5B002BDF8E /* ManagerInjected.swift in Sources */,
