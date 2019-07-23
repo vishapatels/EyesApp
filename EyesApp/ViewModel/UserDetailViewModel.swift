@@ -8,6 +8,12 @@
 
 import Foundation
 
+enum MediaType {
+    case text
+    case image
+    case video
+}
+
 struct UserDetailDataProvider {
     
     var type: String

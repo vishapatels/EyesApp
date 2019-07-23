@@ -16,7 +16,10 @@ class DetailViewController: UIViewController {
     let model = UserDetailViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        model.getUserDetail(id: id,ignoreCache: false, completion: { [weak self] (result) in
+        let layout = UICollectionViewFlowLayout()
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+       
+        model.getUserDetail(id: id,ignoreCache: true, completion: { [weak self] (result) in
             switch result {
             case .success:
               self?.collectionView.reloadData()
@@ -35,18 +38,27 @@ extension DetailViewController : UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailList", for: indexPath) as! DetailViewCell
         if(model.usersDetailAtIndex(atIndex: indexPath.row)?.type == "video" ) {
-            cell.imageHeightConstraint.constant = 0
-            cell.labelHeightConstraint.constant = 0
+            cell.label.isHidden = true
+            cell.label.alpha = 0.0
+            cell.image.isHidden = true
+            cell.image.alpha = 0.0
         }
        else  if(model.usersDetailAtIndex(atIndex: indexPath.row)?.type == "text" ) {
             cell.label.text = model.usersDetailAtIndex(atIndex: indexPath.row)?.data
-            cell.imageHeightConstraint.constant = 0
+            cell.videoPlayerView.isHidden = true
+            cell.videoPlayerView.alpha = 0.0
+            cell.image.isHidden = true
+            cell.image.alpha = 0.0
         }
        else if(model.usersDetailAtIndex(atIndex: indexPath.row)?.type == "image" ) {
                 if let url = URL(string: model.usersDetailAtIndex(atIndex: indexPath.row)?.data ?? "NA") {
                     cell.image.kf.setImage(with: url)
+                    cell.label.isHidden = true
+                    cell.label.alpha = 0.0
+                    cell.videoPlayerView.isHidden = true
+                    cell.videoPlayerView.alpha = 0.0
                 }
-            cell.labelHeightConstraint.constant = 0
+            
             
         }
         return cell

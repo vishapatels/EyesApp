@@ -14,4 +14,6 @@ class DetailViewCell: UICollectionViewCell {
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var image: UIImageView!
+    
+    @IBOutlet weak var videoPlayerView: UIView!
 }
