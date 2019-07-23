@@ -11,6 +11,7 @@ import UIKit
 class DetailViewController: UIViewController {
 
     //added
+    @IBOutlet weak var label: UILabel!
     var id: Int64 = 0
     let model = UserDetailViewModel()
     override func viewDidLoad() {
@@ -23,7 +24,15 @@ class DetailViewController: UIViewController {
                 print(err)
             }
         })
-    }
+        
+       print(model.usersDetailAtIndex(atIndex: 0)?.data)
+         print(model.usersDetailAtIndex(atIndex: 1)?.data)
+         print(model.usersDetailAtIndex(atIndex: 2)?.data)
+        
+        
+        }
+       
+    
 }
 extension DetailViewController {
     

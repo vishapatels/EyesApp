@@ -21,11 +21,8 @@ struct UserDetailDataProvider {
 class UserDetailViewModel {
     private var userDetail: [UserDetailDataProvider]?
     
-    var data: String {
-        return userDetail![0].data
-    }
-    var type: String {
-        return userDetail![0].type
+    func usersDetailAtIndex(atIndex index: Int) -> UserDetailDataProvider? {
+        return userDetail?[index]
     }
     
 }
