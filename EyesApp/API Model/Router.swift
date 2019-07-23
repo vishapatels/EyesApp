@@ -44,6 +44,15 @@ enum Router {
         }
     }
     
+    var queryItems: [URLQueryItem]? {
+        switch self {
+        case .getUserDetailInfo(id: <#T##String#>):
+            
+        default:
+            return nil
+        }
+    }
+    
     var httpHeaders: [String: String] {
         let headers: [String: String] = [HeaderField.contentType.rawValue : "application/json"]
         return headers
@@ -55,34 +64,8 @@ enum Router {
             return "/users"
             
         case .getUserDetailInfo(let id):
-            return ("content?userId=" + id).stringByAddingPercentEncodingForRFC3986()
+            return ("content?userId=" + id)
         }
     }
-    
 }
 
-extension String {
-    func stringByAddingPercentEncodingForRFC3986() -> String? {
-        let unreserved = "-._~/?"
-        let allowed = NSMutableCharacterSet.alphanumeric()
-        allowed.addCharacters(in: unreserved)
-        return stringByAddingPercentEncodingWithAllowedCharacters(allowed)
-    }
-    
-    public func stringByAddingPercentEncodingForFormData(plusForSpace: Bool=false) -> String? {
-        let unreserved = "*-._"
-        let allowed = NSMutableCharacterSet.alphanumeric()
-        allowed.addCharacters(in: unreserved)
-        
-        if plusForSpace {
-            allowed.addCharacters(in: " ")
-        }
-        
-        var encoded = stringByAddingPercentEncodingWithAllowedCharacters(allowed)
-        if plusForSpace {
-            encoded = encoded?.stringByReplacingOccurrencesOfString(" ",
-                                                                    withString: "+")
-        }
-        return encoded
-    }
-}
