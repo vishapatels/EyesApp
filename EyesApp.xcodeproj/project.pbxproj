@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		107361AA22E6A2DB009E2B67 /* EyesApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 107361A822E6A2DB009E2B67 /* EyesApp.xcdatamodeld */; };
+		107361AD22E6A44E009E2B67 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107361AC22E6A44E009E2B67 /* CoreDataManager.swift */; };
 		107F514222E6950A0076517B /* UserDetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107F514122E6950A0076517B /* UserDetailManager.swift */; };
 		107F514422E6952D0076517B /* UserDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107F514322E6952D0076517B /* UserDetailModel.swift */; };
 		107F514622E6978F0076517B /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107F514522E6978F0076517B /* UserDetailViewModel.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		107361A922E6A2DB009E2B67 /* EyesApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EyesApp.xcdatamodel; sourceTree = "<group>"; };
+		107361AC22E6A44E009E2B67 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		107F514122E6950A0076517B /* UserDetailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailManager.swift; sourceTree = "<group>"; };
 		107F514322E6952D0076517B /* UserDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailModel.swift; sourceTree = "<group>"; };
 		107F514522E6978F0076517B /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
@@ -80,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		107361AB22E6A439009E2B67 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				107361AC22E6A44E009E2B67 /* CoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		108B1BA622E6190E002BDF8E = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +112,7 @@
 		108B1BB122E6190E002BDF8E /* EyesApp */ = {
 			isa = PBXGroup;
 			children = (
+				107361AB22E6A439009E2B67 /* CoreData */,
 				108B1BE222E63DC1002BDF8E /* CoreUtilities */,
 				108B1BD922E61D4D002BDF8E /* Injection */,
 				108B1BC622E6199A002BDF8E /* API Model */,
@@ -191,6 +204,7 @@
 		10B5AE7122E6815200B008BE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				107361A822E6A2DB009E2B67 /* EyesApp.xcdatamodeld */,
 				10B5AE7422E6817E00B008BE /* Gibson-Bold-Italic.otf */,
 				10B5AE7822E6817E00B008BE /* Gibson-Bold.otf */,
 				10B5AE7722E6817E00B008BE /* Gibson-Italic.otf */,
@@ -309,6 +323,8 @@
 				108B1BD622E61C51002BDF8E /* UserListManager.swift in Sources */,
 				108B1BB722E6190E002BDF8E /* ViewController.swift in Sources */,
 				108B1BB322E6190E002BDF8E /* AppDelegate.swift in Sources */,
+				107361AA22E6A2DB009E2B67 /* EyesApp.xcdatamodeld in Sources */,
+				107361AD22E6A44E009E2B67 /* CoreDataManager.swift in Sources */,
 				108B1BCE22E61A17002BDF8E /* Loggable.swift in Sources */,
 				108B1BCA22E619D0002BDF8E /* Router.swift in Sources */,
 				108B1BD422E61ABD002BDF8E /* UserListModel.swift in Sources */,
@@ -516,6 +532,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		107361A822E6A2DB009E2B67 /* EyesApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				107361A922E6A2DB009E2B67 /* EyesApp.xcdatamodel */,
+			);
+			currentVersion = 107361A922E6A2DB009E2B67 /* EyesApp.xcdatamodel */;
+			path = EyesApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 108B1BA722E6190E002BDF8E /* Project object */;
 }

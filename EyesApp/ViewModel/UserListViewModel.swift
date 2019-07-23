@@ -37,21 +37,28 @@ enum ServerError: Error {
     //    }
     
 }
-class UserListViewModel {
-     private var userInfos: [UserListDataProvider] = []
+
+final class UserListViewModel {
+     private var userInfos: [UserListDataProvider]?
     
     var numberOfRows: Int {
-        return userInfos.count
+        return userInfos?.count ?? 0
     }
     
     func usersAtIndex(atIndex index: Int) -> UserListDataProvider? {
-        return userInfos[index]
+        return userInfos?[index]
     }
 }
     
 extension UserListViewModel: ManagerInjected {
     
-    func getUserList(completion complete: @escaping(ServiceResult<Bool>) -> Void) {
+    func getUserList(ignoreCache: Bool, completion complete: @escaping(ServiceResult<Bool>) -> Void) {
+        let dataExist = !ignoreCache && userListManager.getUserInfoFromCached() != nil
+        if dataExist {
+            self.userInfos = userListManager.getUserInfoFromCached()
+            complete(.success(true))
+            
+        }
         userListManager.getUserInfoList { [weak self] result in
             guard let self = self else {
                 complete(.success(false))

@@ -18,7 +18,7 @@ final class ViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        model.getUserList(completion: { [weak self] (result) in
+        model.getUserList(ignoreCache: false, completion: { [weak self] (result) in
             switch result {
             case .success:
                 self?.collectionView.reloadData()

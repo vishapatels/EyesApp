@@ -7,13 +7,24 @@
 //
 
 import Foundation
-public protocol CoreServiceCodable: Codable {}
+import CoreData
+
+protocol CoreServiceCodable: Codable {}
 
 extension CoreServiceCodable {
     
-    public static func from<T>(data: Data) -> T? where T: Codable {
+    public static func from<T>(data: Data, managedObjectContext: NSManagedObjectContext? = nil) -> T? where T: Codable {
         do {
-            return try JSONDecoder().decode(T.self, from: data)
+            guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext else {
+                fatalError("Failed to retrieve managed object context")
+            }
+            let decoder = JSONDecoder()
+            if let managedObjectContext = managedObjectContext {
+                decoder.userInfo[codingUserInfoKeyManagedObjectContext] = managedObjectContext
+            }
+            let decodedItem =  try decoder.decode(T.self, from: data)
+            try managedObjectContext?.save()
+            return decodedItem
         } catch let ex {
             print("Unable to decode \(T.self): \(ex.localizedDescription)")
         }
@@ -21,9 +32,20 @@ extension CoreServiceCodable {
         return nil
     }
     
-    public static func arrayFrom<T>(data: Data) -> [T]? where T: Codable {
+    public static func arrayFrom<T>(data: Data, managedObjectContext: NSManagedObjectContext? = nil) -> [T]? where T: Codable {
         do {
-            return try JSONDecoder().decode([T].self, from: data)
+            guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext else {
+                fatalError("Failed to retrieve managed object context")
+            }
+            let decoder = JSONDecoder()
+            if let managedObjectContext = managedObjectContext {
+                decoder.userInfo[codingUserInfoKeyManagedObjectContext] = managedObjectContext
+            }
+            decoder.userInfo[codingUserInfoKeyManagedObjectContext] = managedObjectContext
+            let decodedItems =  try decoder.decode([T].self, from: data)
+            try managedObjectContext?.save()
+            return decodedItems
+           // return try JSONDecoder().decode([T].self, from: data)
         } catch let ex {
             print("Unable to decode array \(T.self): \(ex.localizedDescription)")
         }

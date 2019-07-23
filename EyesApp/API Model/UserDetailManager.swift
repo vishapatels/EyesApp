@@ -13,15 +13,15 @@ protocol UserDetailManagerProtocol {
 }
 
 
-final class UserDetailManager: UserDetailManagerProtocol {
+final class UserDetailManager: UserDetailManagerProtocol, ManagerInjected {
     
     func getUserDetail(id:String, completionHandler complete: @escaping(ServiceResult<[UserDetailDataProvider]>) -> Void) {
         var logger: NetworkLogger = NetworkLogger()
         DispatchQueue.episodeManager.async {
-            APIService.shared.performRequest(router: .getUserDetailInfo(id: id), completionHandler: { result in
+            APIService.shared.performRequest(router: .getUserDetailInfo(id: id), completionHandler: { [weak self] result in
                 switch result {
                 case .success(let data):
-                    if let data = data, let userDetail: UserDetailModel = UserDetailModel.from(data: data) {
+                    if let data = data, let viewContext = self?.coreDataManager.persistentContainer.viewContext, let userDetail: UserDetailModel = UserDetailModel.from(data: data, managedObjectContext: viewContext) {
                         DispatchQueue.main.async {
                             if let userDetailProviders: [UserDetailDataProvider] = userDetail.content?.userDetailProviders {
                                 complete(.success(userDetailProviders))
