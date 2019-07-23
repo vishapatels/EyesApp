@@ -32,12 +32,12 @@ class UserDetailViewModel {
 extension UserDetailViewModel: ManagerInjected {
     
     func getUserDetail(id: Int64 ,ignoreCache: Bool, completion complete: @escaping(ServiceResult<Bool>) -> Void) {
-        let dataExist = !ignoreCache && userDetailManager.getUserDetailFromCached(id: id) != nil
+        let dataExist = !ignoreCache && !(userDetailManager.getUserDetailFromCached(id: id)?.isEmpty ?? true)
         if dataExist {
             self.userDetail = userDetailManager.getUserDetailFromCached(id: id)
             complete(.success(true))
             
-        }
+        } else {
         userDetailManager.getUserDetail(id: String(id)) { [weak self] result in
             guard let self = self else {
                 complete(.success(false))
@@ -50,6 +50,7 @@ extension UserDetailViewModel: ManagerInjected {
             case .failure(let error):
                 complete(.failure(error!))
             }
+        }
         }
     }
 }

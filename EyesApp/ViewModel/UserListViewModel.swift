@@ -40,12 +40,12 @@ final class UserListViewModel {
 extension UserListViewModel: ManagerInjected {
     
     func getUserList(ignoreCache: Bool, completion complete: @escaping(ServiceResult<Bool>) -> Void) {
-        let dataExist = !ignoreCache && userListManager.getUserInfoFromCached() != nil
+        let dataExist = !ignoreCache && !(userListManager.getUserInfoFromCached()?.isEmpty ?? true)
         if dataExist {
             self.userInfos = userListManager.getUserInfoFromCached()
             complete(.success(true))
             
-        }
+        } else {
         userListManager.getUserInfoList { [weak self] result in
             guard let self = self else {
                 complete(.success(false))
@@ -58,6 +58,8 @@ extension UserListViewModel: ManagerInjected {
             case .failure(let error):
                 complete(.failure(error!))
             }
+            }
+            
         }
     }
 }
