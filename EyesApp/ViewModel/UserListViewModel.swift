@@ -23,22 +23,7 @@ struct UserListDataProvider {
 }
 
 
-enum ServerError: Error {
-    
-    case invalidData
-    case invalidResponse
-    case networkError
-    case apiError(statusCode: String)
-    
-    //    var description: String {
-    //
-    //        switch self {
-    //        case .apiError(let statusCode):
-    //
-    //        }
-    //    }
-    
-}
+
 
 final class UserListViewModel {
      private var userInfos: [UserListDataProvider]?

@@ -17,18 +17,22 @@ enum Router {
     case getUserList()
     case getUserDetailInfo(id: String)
     
-    func urlRequest(baseUrl: URL) -> URLRequest {
+    func urlRequest(baseUrl: URL) -> URLRequest? {
         var component = URLComponents()
         component.scheme = baseUrl.scheme
         component.host = baseUrl.host
         component.path = path
         component.queryItems = queryItems
-        var urlRequest = URLRequest(url: baseUrl.appendingPathComponent(path))
+        guard let url = component.url else {
+            return nil
+        }
+        var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = httpMethod
         urlRequest.httpBody = getData
         urlRequest.allHTTPHeaderFields = httpHeaders
         return urlRequest
     }
+    
     
     enum HTTPMethod: String {
         case post = "POST"

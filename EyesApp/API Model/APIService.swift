@@ -8,9 +8,18 @@
 
 import Foundation
 
+enum ServerError: Error {
+    
+    case invalidData
+    case invalidURL
+    case invalidResponse
+    case networkError
+    case apiError(eyesError: EyesError?)
+}
+
 enum ServiceResult<T> {
     case success(T)
-    case failure(Error?)
+    case failure(ServerError?)
 }
 
 struct EyesError: CoreServiceCodable {
@@ -29,7 +38,10 @@ class APIService: NSObject {
     static let shared = APIService()
     var baseURL = "https://eyes-technical-test.herokuapp.com"
     func performRequest(router: Router, completionHandler complete: @escaping (ServiceResult<Data?>) -> Void) {
-        let urlRequest = router.urlRequest(baseUrl: URL(string: baseURL)!)
+        guard let urlRequest = router.urlRequest(baseUrl: URL(string: baseURL)!) else {
+            complete(.failure(ServerError.invalidURL))
+            return
+        }
         logger.log(request: urlRequest)
         let urlSession = URLSession(configuration: URLSessionConfiguration.default, delegate: nil, delegateQueue: nil)
         urlSession.dataTask(with: urlRequest) { [weak self] (data, response, error) in
@@ -41,8 +53,9 @@ class APIService: NSObject {
                     } else {
                         if let data = data {
                             let commonError: EyesError? = EyesError.from(data: data)
+                            complete(.failure(ServerError.apiError(eyesError: commonError)))
                         } else {
-                            complete(.failure(error))
+                            complete(.failure(ServerError.invalidResponse))
                         }
                     }
                 }
