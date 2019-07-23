@@ -10,6 +10,8 @@ import UIKit
 
 class DetailViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var labelHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var image: UIImageView!
 }
