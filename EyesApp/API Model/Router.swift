@@ -18,6 +18,11 @@ enum Router {
     case getUserDetailInfo(id: String)
     
     func urlRequest(baseUrl: URL) -> URLRequest {
+        var component = URLComponents()
+        component.scheme = baseUrl.scheme
+        component.host = baseUrl.host
+        component.path = path
+        component.queryItems = queryItems
         var urlRequest = URLRequest(url: baseUrl.appendingPathComponent(path))
         urlRequest.httpMethod = httpMethod
         urlRequest.httpBody = getData
@@ -46,8 +51,8 @@ enum Router {
     
     var queryItems: [URLQueryItem]? {
         switch self {
-        case .getUserDetailInfo(id: <#T##String#>):
-            
+        case .getUserDetailInfo(let userId):
+            return [URLQueryItem(name: "userId", value: userId)]
         default:
             return nil
         }
@@ -60,11 +65,10 @@ enum Router {
     
     var path: String {
         switch self {
-        case .getUserList():
+        case .getUserList:
             return "/users"
-            
-        case .getUserDetailInfo(let id):
-            return ("content?userId=" + id)
+        case .getUserDetailInfo:
+            return "/content"
         }
     }
 }
