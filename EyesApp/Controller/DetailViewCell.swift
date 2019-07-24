@@ -16,10 +16,7 @@ class DetailViewCell: UICollectionViewCell {
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var videoPlayerView: UIView!
-    //var avPlayer: AVPlayer?
-    //var avPlayerLayer: AVPlayerLayer?
-    
+    @IBOutlet weak var videoPlayerView: UIView!    
     func playVideo(url videoURL: URL?) {
    
         let player = AVPlayer(url: videoURL!)
@@ -29,9 +26,7 @@ class DetailViewCell: UICollectionViewCell {
         player.play()
 
         NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd), name: NSNotification.Name(rawValue: "com.player.playended"), object: player.currentItem!)
-  
     }
-    
     @objc func playerItemDidReachEnd() {
         print("videoEnded")
     }
