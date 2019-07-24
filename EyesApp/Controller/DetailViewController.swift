@@ -36,6 +36,17 @@ extension DetailViewController : UICollectionViewDelegate, UICollectionViewDataS
         return model.numberOfRows
     }
     
+    func collectionView(_ collectionView: UICollectionView,
+                        didEndDisplaying cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
+      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailList", for: indexPath) as! DetailViewCell
+        if(model.usersDetailAtIndex(atIndex: indexPath.row)?.type == "video" ) {
+            if let url = URL(string: (model.usersDetailAtIndex(atIndex: indexPath.row)?.data ?? "")) {
+                cell.playVideo(url: url)
+            }
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailList", for: indexPath) as! DetailViewCell
         if(model.usersDetailAtIndex(atIndex: indexPath.row)?.type == "video" ) {
@@ -43,6 +54,9 @@ extension DetailViewController : UICollectionViewDelegate, UICollectionViewDataS
             cell.label.alpha = 0.0
             cell.image.isHidden = true
             cell.image.alpha = 0.0
+            if let url = URL(string: (model.usersDetailAtIndex(atIndex: indexPath.row)?.data ?? "")) {
+                cell.playVideo(url: url)
+            }
         }
        else  if(model.usersDetailAtIndex(atIndex: indexPath.row)?.type == "text" ) {
             cell.label.text = model.usersDetailAtIndex(atIndex: indexPath.row)?.data
@@ -59,8 +73,7 @@ extension DetailViewController : UICollectionViewDelegate, UICollectionViewDataS
                     cell.videoPlayerView.isHidden = true
                     cell.videoPlayerView.alpha = 0.0
                 }
-            
-            
+
         }
         return cell
     }

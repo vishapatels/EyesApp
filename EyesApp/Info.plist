@@ -73,5 +73,10 @@
 		<string>Gibson-Semibold-Italic.otf</string>
 		<string>Gibson-Semibold.otf</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
