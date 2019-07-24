@@ -2,7 +2,7 @@
 //  UIView+extensions.swift
 //  EyesApp
 //
-//  Created by smitesh patel on 2019-07-23.
+//  Created by Visha Shanghvi on 2019-07-23.
 //  Copyright © 2019 Visha Shanghvi. All rights reserved.
 //
 
