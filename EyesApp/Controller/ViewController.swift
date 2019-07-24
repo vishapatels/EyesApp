@@ -17,6 +17,7 @@ final class ViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Users"
         showLoadingView()
         model.getUserList(ignoreCache: true, completion: { [weak self] (result) in
             self?.removeLoadingView()

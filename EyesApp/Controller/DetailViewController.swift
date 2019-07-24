@@ -16,6 +16,7 @@ class DetailViewController: UIViewController {
     let model = UserDetailViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "User Detail"
         let layout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         showLoadingView()
