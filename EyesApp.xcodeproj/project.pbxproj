@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1027795F22EB7EF00060E060 /* DetailViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1027795E22EB7EF00060E060 /* DetailViewCell.xib */; };
 		1037EBA222E7A334001BBC89 /* DetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1037EBA122E7A334001BBC89 /* DetailViewCell.swift */; };
 		107361AA22E6A2DB009E2B67 /* EyesApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 107361A822E6A2DB009E2B67 /* EyesApp.xcdatamodeld */; };
 		107361AD22E6A44E009E2B67 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107361AC22E6A44E009E2B67 /* CoreDataManager.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1027795E22EB7EF00060E060 /* DetailViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewCell.xib; sourceTree = "<group>"; };
 		1037EBA122E7A334001BBC89 /* DetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCell.swift; sourceTree = "<group>"; };
 		107361A922E6A2DB009E2B67 /* EyesApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EyesApp.xcdatamodel; sourceTree = "<group>"; };
 		107361AC22E6A44E009E2B67 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -183,9 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				108B1BB622E6190E002BDF8E /* ViewController.swift */,
-				108B1BE522E642F4002BDF8E /* UsersListCell.swift */,
 				107F514722E69F740076517B /* DetailViewController.swift */,
-				1037EBA122E7A334001BBC89 /* DetailViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -193,6 +193,9 @@
 		108B1BD222E61A5B002BDF8E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1037EBA122E7A334001BBC89 /* DetailViewCell.swift */,
+				1027795E22EB7EF00060E060 /* DetailViewCell.xib */,
+				108B1BE522E642F4002BDF8E /* UsersListCell.swift */,
 				10B2D07522E7C6130081C57C /* Loading */,
 				10B5AC2322E67B8100B008BE /* Main.storyboard */,
 			);
@@ -326,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10B5AE7D22E681C900B008BE /* Gibson-Light-Italic.otf in Resources */,
+				1027795F22EB7EF00060E060 /* DetailViewCell.xib in Resources */,
 				10B5AE8122E681C900B008BE /* Gibson.otf in Resources */,
 				10B5AE7A22E681BF00B008BE /* Gibson-Bold-Italic.otf in Resources */,
 				10B5AE7F22E681C900B008BE /* Gibson-Semibold-Italic.otf in Resources */,

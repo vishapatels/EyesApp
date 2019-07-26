@@ -13,7 +13,13 @@ import Kingfisher
 final class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    let model = UserListViewModel()
+    private let model = UserListViewModel()
+    
+    private lazy var animateView: Void = {
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            self.animateCollectionView()
+        }
+    }()
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +34,8 @@ final class ViewController: UIViewController {
                 print(err)
             }
         })
-        
     }
+
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -50,6 +56,18 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         detailList  = storyboard?.instantiateViewController(withIdentifier: "DetailList") as! DetailViewController
         detailList.id = model.usersAtIndex(atIndex: indexPath.row)?.id ?? 0
         navigationController?.pushViewController(detailList, animated: true)
+    }
+}
+
+// Private methods
+
+extension ViewController {
+
+    func animateCollectionView() {
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+        
     }
 }
 

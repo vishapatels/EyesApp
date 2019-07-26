@@ -9,17 +9,25 @@
 import UIKit
 //import Koloda
 
+enum CellIdentifier: String {
+    
+    case detailCell = "DetailCell"
+}
+
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     var id: Int64 = 0
-    let model = UserDetailViewModel()
+    private let model = UserDetailViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "User Detail"
         let layout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         showLoadingView()
+        collectionView.register(DetailViewCell.nib, forCellWithReuseIdentifier: CellIdentifier.detailCell.rawValue)
+        
         model.getUserDetail(id: id,ignoreCache: true, completion: { [weak self] (result) in
             self?.removeLoadingView()
             switch result {
@@ -40,7 +48,7 @@ extension DetailViewController : UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView,
                         didEndDisplaying cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
-      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailList", for: indexPath) as! DetailViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.detailCell.rawValue, for: indexPath) as! DetailViewCell
         if(model.usersDetailAtIndex(atIndex: indexPath.row)?.type == "video" ) {
             if let url = URL(string: (model.usersDetailAtIndex(atIndex: indexPath.row)?.data ?? "")) {
                 cell.playVideo(url: url)
@@ -49,7 +57,7 @@ extension DetailViewController : UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailList", for: indexPath) as! DetailViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.detailCell.rawValue, for: indexPath) as! DetailViewCell
         if(model.usersDetailAtIndex(atIndex: indexPath.row)?.type == "video" ) {
             cell.label.isHidden = true
             cell.label.alpha = 0.0

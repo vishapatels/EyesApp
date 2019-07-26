@@ -123,51 +123,7 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DetailList" id="836-Xq-SRd" customClass="DetailViewCell" customModule="EyesApp" customModuleProvider="target">
-                                        <rect key="frame" x="3" y="0.0" width="369" height="150"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="369" height="150"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KZ4-yy-RL5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="369" height="150"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8uo-VG-Zc0">
-                                                            <rect key="frame" x="0.0" y="0.0" width="369" height="150"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="150" id="0Md-1X-wCX"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYC-nH-wtV">
-                                                            <rect key="frame" x="0.0" y="160" width="369" height="150"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="150" id="aHw-7a-xVW"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NLn-c7-9Fs">
-                                                            <rect key="frame" x="0.0" y="320" width="369" height="150"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="150" id="IVc-RW-cPM"/>
-                                                            </constraints>
-                                                        </view>
-                                                    </subviews>
-                                                </stackView>
-                                            </subviews>
-                                        </view>
-                                        <connections>
-                                            <outlet property="image" destination="8uo-VG-Zc0" id="54h-Ue-N3v"/>
-                                            <outlet property="label" destination="UYC-nH-wtV" id="z09-CN-eQU"/>
-                                            <outlet property="videoPlayerView" destination="NLn-c7-9Fs" id="bXz-KA-36V"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="mRf-Ea-lKB" id="lx2-JP-W0q"/>
                                     <outlet property="delegate" destination="mRf-Ea-lKB" id="ZVu-H7-6dj"/>
