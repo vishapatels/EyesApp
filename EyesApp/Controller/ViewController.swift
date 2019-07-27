@@ -12,6 +12,7 @@ import Kingfisher
 
 final class ViewController: UIViewController {
 
+    @IBOutlet weak var collectionviewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
     private let model = UserListViewModel()
     
@@ -25,11 +26,13 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "Users"
         showLoadingView()
+        
         model.getUserList(ignoreCache: true, completion: { [weak self] (result) in
             self?.removeLoadingView()
             switch result {
             case .success:
                 self?.collectionView.reloadData()
+                _ = self?.animateView
             case .failure(let err):
                 print(err)
             }
@@ -64,10 +67,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 extension ViewController {
 
     func animateCollectionView() {
-        UIView.animate(withDuration: 0.3) {
+        collectionviewTopConstraint.constant = 0
+        UIView.animate(withDuration: 1, delay: 0.2, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: .curveEaseInOut, animations: {
             self.view.layoutIfNeeded()
-        }
-        
+        })
     }
 }
 

@@ -1,4 +1,5 @@
 github "HeroTransitions/Hero" "1.4.0"
 github "Yalantis/Koloda" "5.0"
 github "facebook/pop" "1.0.12"
+github "marcosgriselli/ViewAnimator" "2.5.1"
 github "onevcat/Kingfisher" "5.7.0"
