@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		1027795F22EB7EF00060E060 /* DetailViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1027795E22EB7EF00060E060 /* DetailViewCell.xib */; };
+		1027796222EBED840060E060 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1027796022EBED840060E060 /* pop.framework */; };
+		1027796322EBED840060E060 /* Koloda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1027796122EBED840060E060 /* Koloda.framework */; };
+		1027797422EC10070060E060 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1027796822EC10070060E060 /* AnimationType.swift */; };
+		1027797522EC10070060E060 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1027796922EC10070060E060 /* Direction.swift */; };
+		1027797622EC10070060E060 /* UITableView + ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1027796B22EC10070060E060 /* UITableView + ViewAnimator.swift */; };
+		1027797722EC10070060E060 /* UICollectionView + ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1027796C22EC10070060E060 /* UICollectionView + ViewAnimator.swift */; };
+		1027797822EC10070060E060 /* ViewAnimatorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1027796D22EC10070060E060 /* ViewAnimatorConfig.swift */; };
+		1027797922EC10070060E060 /* ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1027796E22EC10070060E060 /* ViewAnimator.swift */; };
+		1027797A22EC10070060E060 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1027797022EC10070060E060 /* Animation.swift */; };
+		1027797F22ECDF8D0060E060 /* BackgroundKolodaAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1027797D22ECDF8D0060E060 /* BackgroundKolodaAnimator.swift */; };
+		1027798022ECDF8D0060E060 /* BackgroundAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1027797E22ECDF8D0060E060 /* BackgroundAnimationViewController.swift */; };
+		1027798222ECDFBC0060E060 /* CustomKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1027798122ECDFBC0060E060 /* CustomKolodaView.swift */; };
+		1027798C22ECF3420060E060 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1027798B22ECF3420060E060 /* UserDetailsView.swift */; };
+		1027798E22ECF35B0060E060 /* UserDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1027798D22ECF35B0060E060 /* UserDetailsView.xib */; };
 		1037EBA222E7A334001BBC89 /* DetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1037EBA122E7A334001BBC89 /* DetailViewCell.swift */; };
 		107361AA22E6A2DB009E2B67 /* EyesApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 107361A822E6A2DB009E2B67 /* EyesApp.xcdatamodeld */; };
 		107361AD22E6A44E009E2B67 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107361AC22E6A44E009E2B67 /* CoreDataManager.swift */; };
@@ -49,6 +63,20 @@
 
 /* Begin PBXFileReference section */
 		1027795E22EB7EF00060E060 /* DetailViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewCell.xib; sourceTree = "<group>"; };
+		1027796022EBED840060E060 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/iOS/pop.framework; sourceTree = "<group>"; };
+		1027796122EBED840060E060 /* Koloda.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Koloda.framework; path = Carthage/Build/iOS/Koloda.framework; sourceTree = "<group>"; };
+		1027796822EC10070060E060 /* AnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationType.swift; sourceTree = "<group>"; };
+		1027796922EC10070060E060 /* Direction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
+		1027796B22EC10070060E060 /* UITableView + ViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView + ViewAnimator.swift"; sourceTree = "<group>"; };
+		1027796C22EC10070060E060 /* UICollectionView + ViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView + ViewAnimator.swift"; sourceTree = "<group>"; };
+		1027796D22EC10070060E060 /* ViewAnimatorConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAnimatorConfig.swift; sourceTree = "<group>"; };
+		1027796E22EC10070060E060 /* ViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAnimator.swift; sourceTree = "<group>"; };
+		1027797022EC10070060E060 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		1027797D22ECDF8D0060E060 /* BackgroundKolodaAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundKolodaAnimator.swift; sourceTree = "<group>"; };
+		1027797E22ECDF8D0060E060 /* BackgroundAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundAnimationViewController.swift; sourceTree = "<group>"; };
+		1027798122ECDFBC0060E060 /* CustomKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKolodaView.swift; sourceTree = "<group>"; };
+		1027798B22ECF3420060E060 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
+		1027798D22ECF35B0060E060 /* UserDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailsView.xib; sourceTree = "<group>"; };
 		1037EBA122E7A334001BBC89 /* DetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCell.swift; sourceTree = "<group>"; };
 		107361A922E6A2DB009E2B67 /* EyesApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EyesApp.xcdatamodel; sourceTree = "<group>"; };
 		107361AC22E6A44E009E2B67 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -95,6 +123,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1027796222EBED840060E060 /* pop.framework in Frameworks */,
+				1027796322EBED840060E060 /* Koloda.framework in Frameworks */,
 				10B2D07122E73B0F0081C57C /* Hero.framework in Frameworks */,
 				10B5AE7022E6810900B008BE /* Kingfisher.framework in Frameworks */,
 			);
@@ -103,6 +133,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1027796422EC10070060E060 /* ViewAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				1027796522EC10070060E060 /* Classes */,
+				1027797122EC10070060E060 /* Assets */,
+			);
+			path = ViewAnimator;
+			sourceTree = "<group>";
+		};
+		1027796522EC10070060E060 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1027796722EC10070060E060 /* Models */,
+				1027796A22EC10070060E060 /* Extensions */,
+				1027796D22EC10070060E060 /* ViewAnimatorConfig.swift */,
+				1027796E22EC10070060E060 /* ViewAnimator.swift */,
+				1027796F22EC10070060E060 /* Protocols */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		1027796722EC10070060E060 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1027796822EC10070060E060 /* AnimationType.swift */,
+				1027796922EC10070060E060 /* Direction.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1027796A22EC10070060E060 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1027796B22EC10070060E060 /* UITableView + ViewAnimator.swift */,
+				1027796C22EC10070060E060 /* UICollectionView + ViewAnimator.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1027796F22EC10070060E060 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1027797022EC10070060E060 /* Animation.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		1027797122EC10070060E060 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		107361AB22E6A439009E2B67 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +215,7 @@
 		108B1BB122E6190E002BDF8E /* EyesApp */ = {
 			isa = PBXGroup;
 			children = (
+				1027796422EC10070060E060 /* ViewAnimator */,
 				10B2D07C22E7C7330081C57C /* Protocols */,
 				10B2D07222E7C5C30081C57C /* Extensions */,
 				107361AB22E6A439009E2B67 /* CoreData */,
@@ -184,6 +269,8 @@
 		108B1BD122E61A54002BDF8E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1027797E22ECDF8D0060E060 /* BackgroundAnimationViewController.swift */,
+				1027797D22ECDF8D0060E060 /* BackgroundKolodaAnimator.swift */,
 				108B1BB622E6190E002BDF8E /* ViewController.swift */,
 				107F514722E69F740076517B /* DetailViewController.swift */,
 			);
@@ -193,11 +280,14 @@
 		108B1BD222E61A5B002BDF8E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1027798122ECDFBC0060E060 /* CustomKolodaView.swift */,
 				1037EBA122E7A334001BBC89 /* DetailViewCell.swift */,
 				1027795E22EB7EF00060E060 /* DetailViewCell.xib */,
 				108B1BE522E642F4002BDF8E /* UsersListCell.swift */,
 				10B2D07522E7C6130081C57C /* Loading */,
 				10B5AC2322E67B8100B008BE /* Main.storyboard */,
+				1027798B22ECF3420060E060 /* UserDetailsView.swift */,
+				1027798D22ECF35B0060E060 /* UserDetailsView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -247,6 +337,8 @@
 		10B5AC4322E680D100B008BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1027796122EBED840060E060 /* Koloda.framework */,
+				1027796022EBED840060E060 /* pop.framework */,
 				10B2D06F22E739BE0081C57C /* Hero.framework */,
 				10B5AE6F22E6810900B008BE /* Kingfisher.framework */,
 			);
@@ -338,6 +430,7 @@
 				108B1BBC22E61914002BDF8E /* Assets.xcassets in Resources */,
 				10B5AC2422E67B8100B008BE /* Main.storyboard in Resources */,
 				10B5AE7B22E681C100B008BE /* Gibson-Bold.otf in Resources */,
+				1027798E22ECF35B0060E060 /* UserDetailsView.xib in Resources */,
 				10B2D07822E7C6130081C57C /* LoadingView.xib in Resources */,
 				10B5AE7E22E681C900B008BE /* Gibson-Light.otf in Resources */,
 				10B5AE7C22E681C900B008BE /* Gibson-Italic.otf in Resources */,
@@ -357,12 +450,17 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Hero.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Koloda.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/pop.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
+				"$(DERIVED_FILE_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Hero.framework",
+				"$(DERIVED_FILE_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Koloda.framework",
+				"$(DERIVED_FILE_DIR)/$(FRAMEWORKS_FOLDER_PATH)/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -375,15 +473,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1027798222ECDFBC0060E060 /* CustomKolodaView.swift in Sources */,
 				10B2D07B22E7C6E50081C57C /* UIView+extensions.swift in Sources */,
+				1027798022ECDF8D0060E060 /* BackgroundAnimationViewController.swift in Sources */,
 				108B1BD622E61C51002BDF8E /* UserListManager.swift in Sources */,
+				1027797622EC10070060E060 /* UITableView + ViewAnimator.swift in Sources */,
 				108B1BB722E6190E002BDF8E /* ViewController.swift in Sources */,
 				108B1BB322E6190E002BDF8E /* AppDelegate.swift in Sources */,
 				107361AA22E6A2DB009E2B67 /* EyesApp.xcdatamodeld in Sources */,
+				1027797F22ECDF8D0060E060 /* BackgroundKolodaAnimator.swift in Sources */,
 				10B2D07E22E7C74C0081C57C /* NibFileLoadable.swift in Sources */,
 				107361AD22E6A44E009E2B67 /* CoreDataManager.swift in Sources */,
 				10B2D07922E7C6130081C57C /* LoadingView.swift in Sources */,
+				1027797422EC10070060E060 /* AnimationType.swift in Sources */,
+				1027797922EC10070060E060 /* ViewAnimator.swift in Sources */,
 				108B1BCE22E61A17002BDF8E /* Loggable.swift in Sources */,
+				1027797722EC10070060E060 /* UICollectionView + ViewAnimator.swift in Sources */,
 				108B1BCA22E619D0002BDF8E /* Router.swift in Sources */,
 				108B1BD422E61ABD002BDF8E /* UserListModel.swift in Sources */,
 				108B1BE622E642F4002BDF8E /* UsersListCell.swift in Sources */,
@@ -393,11 +498,15 @@
 				10B2D07422E7C5D80081C57C /* UIViewController+Extensions.swift in Sources */,
 				107F514422E6952D0076517B /* UserDetailModel.swift in Sources */,
 				108B1BCC22E619EC002BDF8E /* APIService.swift in Sources */,
+				1027798C22ECF3420060E060 /* UserDetailsView.swift in Sources */,
 				108B1BDB22E61D5B002BDF8E /* ManagerInjected.swift in Sources */,
 				107F514622E6978F0076517B /* UserDetailViewModel.swift in Sources */,
 				108B1BC822E619AC002BDF8E /* CoreServiceCodable.swift in Sources */,
 				1037EBA222E7A334001BBC89 /* DetailViewCell.swift in Sources */,
+				1027797522EC10070060E060 /* Direction.swift in Sources */,
 				108B1BD822E61D0D002BDF8E /* UserListViewModel.swift in Sources */,
+				1027797A22EC10070060E060 /* Animation.swift in Sources */,
+				1027797822EC10070060E060 /* ViewAnimatorConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

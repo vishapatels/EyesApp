@@ -9,13 +9,14 @@
 import UIKit
 import Kingfisher
 
-
 final class ViewController: UIViewController {
 
     @IBOutlet weak var collectionviewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
-    private let model = UserListViewModel()
     
+    private let model = UserListViewModel()
+    private let animations = [AnimationType.from(direction: .left, offset: 50.0)]
+    private let animationsR = [AnimationType.from(direction: .right, offset: 50.0)]
     private lazy var animateView: Void = {
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             self.animateCollectionView()
@@ -55,10 +56,12 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailList: DetailViewController
-        detailList  = storyboard?.instantiateViewController(withIdentifier: "DetailList") as! DetailViewController
-        detailList.id = model.usersAtIndex(atIndex: indexPath.row)?.id ?? 0
-        navigationController?.pushViewController(detailList, animated: true)
+//        let detailList: DetailViewController
+//        detailList  = storyboard?.instantiateViewController(withIdentifier: "DetailList") as! DetailViewController
+//        detailList.id = model.usersAtIndex(atIndex: indexPath.row)?.id ?? 0
+        let animationVC = storyboard?.instantiateViewController(withIdentifier: "BackgroundAnimationViewController") as! BackgroundAnimationViewController
+        animationVC.id = model.usersAtIndex(atIndex: indexPath.row)?.id ?? 0
+        navigationController?.pushViewController(animationVC, animated: true)
     }
 }
 
@@ -70,7 +73,25 @@ extension ViewController {
         collectionviewTopConstraint.constant = 0
         UIView.animate(withDuration: 1, delay: 0.2, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: .curveEaseInOut, animations: {
             self.view.layoutIfNeeded()
-        })
+        }) { [weak self] _ in
+            self?.animateCollectionViewCells()
+        }
+    }
+    
+    func animateCollectionViewCells() {
+        
+        collectionView?.performBatchUpdates({
+            UIView.animate(views: self.collectionView!.evenCells,
+                           animations: animations, completion: {
+                            //sender.isEnabled = true
+            })
+        }, completion: nil)
+        collectionView?.performBatchUpdates({
+            UIView.animate(views: self.collectionView!.oddCells,
+                           animations: animationsR, completion: {
+                            //sender.isEnabled = true
+            })
+        }, completion: nil)
     }
 }
 

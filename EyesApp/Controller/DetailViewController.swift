@@ -26,6 +26,7 @@ class DetailViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         showLoadingView()
+        
         collectionView.register(DetailViewCell.nib, forCellWithReuseIdentifier: CellIdentifier.detailCell.rawValue)
         
         model.getUserDetail(id: id,ignoreCache: true, completion: { [weak self] (result) in
