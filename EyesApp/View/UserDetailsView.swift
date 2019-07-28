@@ -21,12 +21,14 @@ final class UserDetailsView: UIView {
     @IBOutlet weak var videoPlayerView: UIView!
     
     private var type: MediaType = .text
-
+    private var player: AVPlayer?
+    private var playerLayer: AVPlayerLayer?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    public static func create(type: MediaType, content: String) -> UserDetailsView {
+    static func create(type: MediaType, content: String) -> UserDetailsView {
         let view = UserDetailsView.loadFromNib(fromBundle: Bundle(for: UserDetailsView.self))
         view.translatesAutoresizingMaskIntoConstraints = false
         view.configure(type: type, content: content)
@@ -35,6 +37,11 @@ final class UserDetailsView: UIView {
     
     @objc func playerItemDidReachEnd() {
         print("videoEnded")
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        playerLayer?.frame = bounds
     }
 }
 
@@ -72,12 +79,13 @@ extension UserDetailsView {
     
     private func playVideo(url videoURL: URL?) {
         
-        let player = AVPlayer(url: videoURL!)
-        let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.frame = videoPlayerView.bounds
-        videoPlayerView.layer.addSublayer(playerLayer)
-        player.play()
+        player = AVPlayer(url: videoURL!)
+        playerLayer = AVPlayerLayer(player: player)
+        playerLayer?.frame = videoPlayerView.bounds
+        playerLayer?.videoGravity = .resizeAspectFill
+        videoPlayerView.layer.addSublayer(playerLayer!)
+        player?.play()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd), name: NSNotification.Name(rawValue: "com.player.playended"), object: player.currentItem!)
+        NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd), name: NSNotification.Name(rawValue: "com.player.playended"), object: player?.currentItem!)
     }
 }
