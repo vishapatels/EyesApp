@@ -43,8 +43,8 @@
                                                                 <constraint firstAttribute="height" constant="138" id="tdK-GI-JN9"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9e-GA-CV6">
-                                                            <rect key="frame" x="0.0" y="145" width="148" height="39"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9e-GA-CV6">
+                                                            <rect key="frame" x="16" y="145" width="148" height="39"/>
                                                             <attributedString key="attributedText">
                                                                 <fragment content="Label">
                                                                     <attributes>
@@ -62,8 +62,8 @@
                                                         <constraint firstAttribute="trailing" secondItem="jaN-1a-zho" secondAttribute="trailing" constant="32" id="30c-bW-HZm"/>
                                                         <constraint firstItem="jaN-1a-zho" firstAttribute="top" secondItem="6TI-wB-jfD" secondAttribute="top" constant="10" id="3RC-iX-d3t"/>
                                                         <constraint firstItem="jaN-1a-zho" firstAttribute="leading" secondItem="6TI-wB-jfD" secondAttribute="leading" constant="10" id="UPB-sY-CvK"/>
-                                                        <constraint firstAttribute="trailing" secondItem="m9e-GA-CV6" secondAttribute="trailing" constant="32" id="YBM-up-9gV"/>
-                                                        <constraint firstItem="m9e-GA-CV6" firstAttribute="leading" secondItem="6TI-wB-jfD" secondAttribute="leading" id="nYQ-1K-UFu"/>
+                                                        <constraint firstAttribute="trailing" secondItem="m9e-GA-CV6" secondAttribute="trailing" constant="16" id="YBM-up-9gV"/>
+                                                        <constraint firstItem="m9e-GA-CV6" firstAttribute="leading" secondItem="6TI-wB-jfD" secondAttribute="leading" constant="16" id="nYQ-1K-UFu"/>
                                                         <constraint firstAttribute="bottom" secondItem="m9e-GA-CV6" secondAttribute="bottom" id="ppa-Y3-ii0"/>
                                                         <constraint firstItem="m9e-GA-CV6" firstAttribute="top" secondItem="jaN-1a-zho" secondAttribute="bottom" constant="-3" id="tgL-EY-9nQ"/>
                                                     </constraints>

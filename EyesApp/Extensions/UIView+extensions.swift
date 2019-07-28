@@ -25,4 +25,35 @@ extension UIView {
         view.leadingAnchor.constraint(equalTo: leadingAnchor, constant: edgeInset.left).isActive = true
         view.trailingAnchor.constraint(equalTo: trailingAnchor, constant: edgeInset.right).isActive = true
     }
+    
+    /// Add a shadow on a view's layer with given parameters
+    ///
+    /// - Parameters:
+    ///   - color: The color of the layer’s shadow. Animatable.
+    ///   - opacity: The opacity of the layer’s shadow. Animatable.
+    ///   - radius: The blur radius (in points) used to render the layer’s shadow. Animatable.
+    ///   - offset: The offset (in points) of the layer’s shadow. Animatable.
+    func addShadow(color: UIColor, opacity: Float, radius: CGFloat? = nil, offset: CGSize? = nil) {
+        if let offset = offset {
+            layer.shadowOffset = offset
+        }
+        
+        if let radius = radius {
+            layer.shadowRadius = radius
+        }
+        
+        layer.shadowColor = color.cgColor
+        layer.shadowOpacity = opacity
+    }
+    
+    /// Round corners of a view with given radius value
+    ///
+    /// - Parameter
+    ///   - corners: The corners for rectangle to be set with radius.
+    ///   - radius: The radius to use when drawing rounded corners for the layer’s background. Animatable.
+    func setRound(withRadius radius: CGFloat, atCorners corners: CACornerMask = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner]) {
+        layer.cornerRadius = radius
+        layer.maskedCorners = corners
+    }
+    
 }

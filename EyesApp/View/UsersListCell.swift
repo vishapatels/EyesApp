@@ -11,9 +11,9 @@ import UIKit
 class UsersListCell: UICollectionViewCell {
     @IBOutlet weak var imageLbl: UIImageView!
     @IBOutlet weak var userNameLbl: UILabel!
-    
+
     override func awakeFromNib() {
         imageLbl.layer.masksToBounds = true
-        imageLbl.layer.cornerRadius = imageLbl.frame.size.width/2.0
+        imageLbl.setRound(withRadius: imageLbl.frame.size.width/2.0)
     }
 }
