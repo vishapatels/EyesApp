@@ -12,23 +12,25 @@ import UIKit
 import AVFoundation
 import AVKit
 
-
-
 final class UserDetailsView: UIView {
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var videoPlayerView: UIView!
+    @IBOutlet weak var layerContainerView: GradientView!
     
     @IBOutlet weak var stackView: UIStackView!
     private var type: MediaType = .text
     private var player: AVPlayer?
     private var playerLayer: AVPlayerLayer?
+    private var gradientColors: [UIColor] {
+        return [.bubblegumPink, .easterPurple]
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setRound(withRadius: 20)
-        
+        stackView.setRound(withRadius: 20)
+        applyGradientLayer()
     }
     
     static func create(type: MediaType, content: String) -> UserDetailsView {
@@ -45,6 +47,11 @@ final class UserDetailsView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         playerLayer?.frame = bounds
+        
+    }
+    
+    func applyGradientLayer() {
+        layerContainerView.applyGradient(colors: gradientColors, locations: [0.0, 1])
     }
 }
 
@@ -60,12 +67,8 @@ extension UserDetailsView {
                 $0?.alpha = 0.0
             }
             label.text = content
-//            var gradientColors: [UIColor] {
-//                return [.bubblegumPink, .easterPurple]
-//            }
-//            stackView.applyGradient(colors: gradientColors, locations: [0.0, 1])
         case .image:
-            [label, videoPlayerView].forEach {
+            [layerContainerView, videoPlayerView].forEach {
                 $0?.isHidden = true
                 $0?.alpha = 0.0
             }
@@ -74,7 +77,7 @@ extension UserDetailsView {
             }
             
         case .video:
-            [label, image].forEach {
+            [layerContainerView, image].forEach {
                 $0?.isHidden = true
                 $0?.alpha = 0.0
             }

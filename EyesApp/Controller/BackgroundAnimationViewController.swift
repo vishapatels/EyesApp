@@ -102,17 +102,11 @@ extension BackgroundAnimationViewController: KolodaViewDataSource {
     }
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        var userDetailsView: UserDetailsView = UserDetailsView.create(type: .text, content: "No Data Available")
         let content = model.usersDetailAtIndex(atIndex: index)?.data ?? ""
-        
-        if(model.usersDetailAtIndex(atIndex: index)?.type == "video" ) {
-            userDetailsView =  UserDetailsView.create(type: .video, content: content)
-        } else if(model.usersDetailAtIndex(atIndex: index)?.type == "image" ) {
-            userDetailsView =  UserDetailsView.create(type: .image,content: content)
-        } else if(model.usersDetailAtIndex(atIndex: index)?.type == "text" ) {
-            userDetailsView =  UserDetailsView.create(type: .text, content: content)
-            
+        if let type: MediaType = model.usersDetailAtIndex(atIndex: index)?.type {
+             return UserDetailsView.create(type: type,content: content)
+        } else {
+            return UserDetailsView.create(type: .text, content: "No Data Available")
         }
-        return userDetailsView
     }
 }

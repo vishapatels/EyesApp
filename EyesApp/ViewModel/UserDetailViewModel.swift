@@ -8,19 +8,42 @@
 
 import Foundation
 
-enum MediaType {
+enum MediaType: String, Comparable {
     case text
     case image
     case video
+    
+    init(type: String) {
+        self = MediaType(rawValue: type) ?? .text
+    }
+    
+    private var sortOrder: Int {
+        switch self {
+        case .image:
+            return 0
+        case .video:
+            return 1
+        case .text:
+            return 2
+        }
+    }
+    
+    static func ==(lhs: MediaType, rhs: MediaType) -> Bool {
+        return lhs.sortOrder == rhs.sortOrder
+    }
+    
+    static func <(lhs: MediaType, rhs: MediaType) -> Bool {
+        return lhs.sortOrder < rhs.sortOrder
+    }
 }
 
 struct UserDetailDataProvider {
     
-    var type: String
+    var type: MediaType
     var data: String
     
     init(type: String, data: String) {
-        self.type = type
+        self.type = MediaType(type: type)
         self.data = data
     }
 }

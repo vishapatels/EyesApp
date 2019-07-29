@@ -37,3 +37,5 @@ class CustomKolodaView: KolodaView {
     }
 
 }
+
+class StaticKolodaView: KolodaView {}

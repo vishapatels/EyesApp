@@ -50,7 +50,7 @@ extension DetailViewController : UICollectionViewDelegate, UICollectionViewDataS
                         didEndDisplaying cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.detailCell.rawValue, for: indexPath) as! DetailViewCell
-        if(model.usersDetailAtIndex(atIndex: indexPath.row)?.type == "video" ) {
+        if(model.usersDetailAtIndex(atIndex: indexPath.row)?.type.rawValue == "video" ) {
             if let url = URL(string: (model.usersDetailAtIndex(atIndex: indexPath.row)?.data ?? "")) {
                 cell.playVideo(url: url)
             }
@@ -59,7 +59,7 @@ extension DetailViewController : UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.detailCell.rawValue, for: indexPath) as! DetailViewCell
-        if(model.usersDetailAtIndex(atIndex: indexPath.row)?.type == "video" ) {
+        if(model.usersDetailAtIndex(atIndex: indexPath.row)?.type.rawValue == "video" ) {
             cell.label.isHidden = true
             cell.label.alpha = 0.0
             cell.image.isHidden = true
@@ -68,14 +68,14 @@ extension DetailViewController : UICollectionViewDelegate, UICollectionViewDataS
                 cell.playVideo(url: url)
             }
         }
-       else  if(model.usersDetailAtIndex(atIndex: indexPath.row)?.type == "text" ) {
+       else  if(model.usersDetailAtIndex(atIndex: indexPath.row)?.type.rawValue == "text" ) {
             cell.label.text = model.usersDetailAtIndex(atIndex: indexPath.row)?.data
             cell.videoPlayerView.isHidden = true
             cell.videoPlayerView.alpha = 0.0
             cell.image.isHidden = true
             cell.image.alpha = 0.0
         }
-       else if(model.usersDetailAtIndex(atIndex: indexPath.row)?.type == "image" ) {
+       else if(model.usersDetailAtIndex(atIndex: indexPath.row)?.type.rawValue == "image" ) {
                 if let url = URL(string: model.usersDetailAtIndex(atIndex: indexPath.row)?.data ?? "NA") {
                     cell.image.kf.setImage(with: url)
                     cell.label.isHidden = true

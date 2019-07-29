@@ -169,7 +169,7 @@
         <!--Background Animation View Controller-->
         <scene sceneID="mfi-R1-U4C">
             <objects>
-                <viewController storyboardIdentifier="BackgroundAnimationViewController" id="M0W-4B-NFs" customClass="BackgroundAnimationViewController" customModule="Koloda_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BackgroundAnimationViewController" id="M0W-4B-NFs" customClass="BackgroundAnimationViewController" customModule="EyesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zfm-iA-wcI"/>
                         <viewControllerLayoutGuide type="bottom" id="1O9-rJ-afJ"/>
@@ -178,7 +178,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5xM-o2-Ecu" customClass="CustomKolodaView" customModule="Koloda_Example" customModuleProvider="target">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5xM-o2-Ecu" customClass="CustomKolodaView" customModule="EyesApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="74" width="320" height="494"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -275,10 +275,133 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EmZ-6E-MiL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1553" y="321"/>
+            <point key="canvasLocation" x="1591" y="924"/>
+        </scene>
+        <!--User Details View Controller-->
+        <scene sceneID="jha-Qx-Pv5">
+            <objects>
+                <viewController storyboardIdentifier="UserDetailsViewController" id="j1I-Z4-0ap" customClass="UserDetailsViewController" customModule="EyesApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jjC-qC-UwA"/>
+                        <viewControllerLayoutGuide type="bottom" id="daL-La-iDH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eWb-VI-hUW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cards_1" translatesAutoresizingMaskIntoConstraints="NO" id="aQS-40-Ra2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F81-EF-ui8">
+                                <rect key="frame" x="27" y="104" width="320" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5C-yw-0X7">
+                                        <rect key="frame" x="15" y="33" width="19" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="Ble-5A-ibW"/>
+                                            <constraint firstAttribute="width" constant="19" id="awq-Kc-fVX"/>
+                                        </constraints>
+                                        <state key="normal" image="ic_card_from_bg">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcp-X5-krd">
+                                        <rect key="frame" x="284" y="33" width="21" height="22"/>
+                                        <state key="normal" image="ic_undo">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="undoButtonTapped" destination="j1I-Z4-0ap" eventType="touchUpInside" id="yuE-Ki-9iz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="N5C-yw-0X7" firstAttribute="leading" secondItem="F81-EF-ui8" secondAttribute="leading" constant="15" id="LlE-Aw-xS6"/>
+                                    <constraint firstAttribute="height" constant="64" id="O1M-Ta-5C4"/>
+                                    <constraint firstItem="wcp-X5-krd" firstAttribute="top" secondItem="F81-EF-ui8" secondAttribute="top" constant="33" id="SNW-pJ-x4e"/>
+                                    <constraint firstItem="N5C-yw-0X7" firstAttribute="top" secondItem="F81-EF-ui8" secondAttribute="top" constant="33" id="VH1-a4-Uvp"/>
+                                    <constraint firstAttribute="trailing" secondItem="wcp-X5-krd" secondAttribute="trailing" constant="15" id="Vad-lQ-Tqd"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="43U-x6-NdT">
+                                <rect key="frame" x="127.5" y="557" width="120" height="32"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LtY-ak-FyB">
+                                        <rect key="frame" x="88" y="0.0" width="32" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="ic_like">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="highlighted" image="btn_like_pressed"/>
+                                        <connections>
+                                            <action selector="rightButtonTapped" destination="j1I-Z4-0ap" eventType="touchUpInside" id="zJa-Lo-fh5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIS-II-0R7">
+                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="ic_skip">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="highlighted" image="btn_skip_pressed"/>
+                                        <connections>
+                                            <action selector="leftButtonTapped" destination="j1I-Z4-0ap" eventType="touchUpInside" id="BpU-E9-d4p"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="pJN-Df-Lvs"/>
+                                    <constraint firstAttribute="width" constant="120" id="uaI-fz-Ynx"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYo-sj-iQs" customClass="StaticKolodaView" customModule="EyesApp" customModuleProvider="target">
+                                <rect key="frame" x="31" y="168" width="314" height="367"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="tYo-sj-iQs" secondAttribute="height" multiplier="71:80" constant="-11.712499999999977" id="ha8-KE-elT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13725490200000001" green="0.1529411765" blue="0.1647058824" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tYo-sj-iQs" firstAttribute="leading" secondItem="eWb-VI-hUW" secondAttribute="leading" constant="31" id="4Xo-fD-s2s"/>
+                            <constraint firstAttribute="centerX" secondItem="43U-x6-NdT" secondAttribute="centerX" id="DjY-nA-6qY"/>
+                            <constraint firstItem="aQS-40-Ra2" firstAttribute="height" secondItem="eWb-VI-hUW" secondAttribute="height" id="F61-4z-tqL"/>
+                            <constraint firstAttribute="trailing" secondItem="F81-EF-ui8" secondAttribute="trailing" constant="28" id="HBz-ex-fdh"/>
+                            <constraint firstItem="aQS-40-Ra2" firstAttribute="width" secondItem="eWb-VI-hUW" secondAttribute="width" id="PQs-2T-o2x"/>
+                            <constraint firstItem="F81-EF-ui8" firstAttribute="top" secondItem="jjC-qC-UwA" secondAttribute="bottom" id="dKR-cH-KgB"/>
+                            <constraint firstItem="aQS-40-Ra2" firstAttribute="leading" secondItem="ghw-Zx-gCQ" secondAttribute="leading" id="dv0-54-Yra"/>
+                            <constraint firstAttribute="trailing" secondItem="tYo-sj-iQs" secondAttribute="trailing" constant="30" id="kRd-6E-yZN"/>
+                            <constraint firstItem="aQS-40-Ra2" firstAttribute="top" secondItem="eWb-VI-hUW" secondAttribute="top" id="lAD-1B-k7P"/>
+                            <constraint firstItem="F81-EF-ui8" firstAttribute="top" secondItem="eWb-VI-hUW" secondAttribute="top" constant="104" id="mlT-Lb-MJe"/>
+                            <constraint firstItem="43U-x6-NdT" firstAttribute="top" secondItem="tYo-sj-iQs" secondAttribute="bottom" constant="22" id="qKI-M5-CRb"/>
+                            <constraint firstItem="tYo-sj-iQs" firstAttribute="top" secondItem="F81-EF-ui8" secondAttribute="bottom" id="uyS-fL-kn5"/>
+                            <constraint firstItem="F81-EF-ui8" firstAttribute="leading" secondItem="eWb-VI-hUW" secondAttribute="leading" constant="27" id="yKU-jA-qQv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ghw-Zx-gCQ"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dKR-cH-KgB"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="nLx-fS-IHw"/>
+                    <connections>
+                        <outlet property="myKolodaView" destination="tYo-sj-iQs" id="tyV-0O-iRs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9rl-4Z-YPb" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1573.5999999999999" y="248.72563718140933"/>
         </scene>
     </scenes>
     <resources>
+        <image name="btn_like_pressed" width="16" height="16"/>
+        <image name="btn_skip_pressed" width="16" height="16"/>
+        <image name="cards_1" width="345" height="460"/>
+        <image name="ic_card_from_bg" width="21.5" height="21.5"/>
         <image name="ic_koloda" width="21.5" height="21.5"/>
         <image name="ic_like" width="76" height="68"/>
         <image name="ic_skip" width="34" height="34"/>

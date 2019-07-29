@@ -56,7 +56,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let animationVC = storyboard?.instantiateViewController(withIdentifier: "BackgroundAnimationViewController") as! BackgroundAnimationViewController
+        let animationVC = storyboard?.instantiateViewController(withIdentifier: "UserDetailsViewController") as! UserDetailsViewController
         animationVC.id = model.usersAtIndex(atIndex: indexPath.row)?.id ?? 0
         navigationController?.pushViewController(animationVC, animated: true)
     }

@@ -20,12 +20,25 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wx9-WY-8j4">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="215.5"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syi-EE-X4Q">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5mi-ZW-dSq" customClass="GradientView" customModule="EyesApp" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="225.5" width="375" height="216"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syi-EE-X4Q">
+                                    <rect key="frame" x="0.0" y="-0.5" width="375" height="216"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="syi-EE-X4Q" firstAttribute="leading" secondItem="5mi-ZW-dSq" secondAttribute="leading" id="DYF-FQ-T6p"/>
+                                <constraint firstItem="syi-EE-X4Q" firstAttribute="top" secondItem="5mi-ZW-dSq" secondAttribute="top" constant="-0.5" id="NJV-6t-pjN"/>
+                                <constraint firstItem="syi-EE-X4Q" firstAttribute="width" secondItem="5mi-ZW-dSq" secondAttribute="width" id="Z39-MP-A1d"/>
+                                <constraint firstItem="syi-EE-X4Q" firstAttribute="height" secondItem="5mi-ZW-dSq" secondAttribute="height" id="lTb-CZ-XYb"/>
+                            </constraints>
+                        </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GTz-PM-MfI">
                             <rect key="frame" x="0.0" y="451.5" width="375" height="215.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -33,11 +46,11 @@
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="wx9-WY-8j4" secondAttribute="trailing" id="2BT-cs-4AT"/>
-                        <constraint firstAttribute="trailing" secondItem="syi-EE-X4Q" secondAttribute="trailing" id="Asm-sS-NGZ"/>
                         <constraint firstItem="wx9-WY-8j4" firstAttribute="leading" secondItem="HTf-mv-WTY" secondAttribute="leading" id="Dii-qu-vGE"/>
+                        <constraint firstAttribute="trailing" secondItem="5mi-ZW-dSq" secondAttribute="trailing" id="Pqd-HT-x4C"/>
                         <constraint firstItem="GTz-PM-MfI" firstAttribute="leading" secondItem="HTf-mv-WTY" secondAttribute="leading" id="dHG-In-sUF"/>
+                        <constraint firstItem="5mi-ZW-dSq" firstAttribute="leading" secondItem="HTf-mv-WTY" secondAttribute="leading" id="kKu-6y-6gz"/>
                         <constraint firstAttribute="trailing" secondItem="GTz-PM-MfI" secondAttribute="trailing" id="uYx-Y9-ES6"/>
-                        <constraint firstItem="syi-EE-X4Q" firstAttribute="leading" secondItem="HTf-mv-WTY" secondAttribute="leading" id="z2k-JB-Dhh"/>
                     </constraints>
                 </stackView>
             </subviews>
@@ -51,6 +64,7 @@
             <connections>
                 <outlet property="image" destination="wx9-WY-8j4" id="UL0-Iy-HA6"/>
                 <outlet property="label" destination="syi-EE-X4Q" id="MIL-U6-O39"/>
+                <outlet property="layerContainerView" destination="5mi-ZW-dSq" id="0kY-Eo-iHc"/>
                 <outlet property="stackView" destination="HTf-mv-WTY" id="aWj-0a-Pms"/>
                 <outlet property="videoPlayerView" destination="GTz-PM-MfI" id="w5A-aQ-iTy"/>
             </connections>

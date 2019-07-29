@@ -23,6 +23,7 @@
 		1027798C22ECF3420060E060 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1027798B22ECF3420060E060 /* UserDetailsView.swift */; };
 		1027798E22ECF35B0060E060 /* UserDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1027798D22ECF35B0060E060 /* UserDetailsView.xib */; };
 		1027799122EE9F1F0060E060 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1027799022EE9F1F0060E060 /* GradientView.swift */; };
+		102779B122EEAB280060E060 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102779B022EEAB280060E060 /* UserDetailsViewController.swift */; };
 		1037EBA222E7A334001BBC89 /* DetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1037EBA122E7A334001BBC89 /* DetailViewCell.swift */; };
 		107361AA22E6A2DB009E2B67 /* EyesApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 107361A822E6A2DB009E2B67 /* EyesApp.xcdatamodeld */; };
 		107361AD22E6A44E009E2B67 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107361AC22E6A44E009E2B67 /* CoreDataManager.swift */; };
@@ -79,6 +80,7 @@
 		1027798B22ECF3420060E060 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 		1027798D22ECF35B0060E060 /* UserDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailsView.xib; sourceTree = "<group>"; };
 		1027799022EE9F1F0060E060 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		102779B022EEAB280060E060 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 		1037EBA122E7A334001BBC89 /* DetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCell.swift; sourceTree = "<group>"; };
 		107361A922E6A2DB009E2B67 /* EyesApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EyesApp.xcdatamodel; sourceTree = "<group>"; };
 		107361AC22E6A44E009E2B67 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 				1027797D22ECDF8D0060E060 /* BackgroundKolodaAnimator.swift */,
 				108B1BB622E6190E002BDF8E /* ViewController.swift */,
 				107F514722E69F740076517B /* DetailViewController.swift */,
+				102779B022EEAB280060E060 /* UserDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				107F514422E6952D0076517B /* UserDetailModel.swift in Sources */,
 				108B1BCC22E619EC002BDF8E /* APIService.swift in Sources */,
 				1027798C22ECF3420060E060 /* UserDetailsView.swift in Sources */,
+				102779B122EEAB280060E060 /* UserDetailsViewController.swift in Sources */,
 				108B1BDB22E61D5B002BDF8E /* ManagerInjected.swift in Sources */,
 				107F514622E6978F0076517B /* UserDetailViewModel.swift in Sources */,
 				108B1BC822E619AC002BDF8E /* CoreServiceCodable.swift in Sources */,

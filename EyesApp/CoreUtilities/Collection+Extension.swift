@@ -19,8 +19,6 @@ extension Collection where Element == User {
 extension Collection where Element == Content {
     
     var userDetailProviders: [UserDetailDataProvider] {
-        return compactMap { result in
-            UserDetailDataProvider(type: result.type!, data: result.data!)
-        }
+        return compactMap { UserDetailDataProvider(type: $0.type!, data: $0.data!) }.sorted(by: { $0.type < $1.type })
     }
 }
