@@ -51,6 +51,7 @@
             <connections>
                 <outlet property="image" destination="wx9-WY-8j4" id="UL0-Iy-HA6"/>
                 <outlet property="label" destination="syi-EE-X4Q" id="MIL-U6-O39"/>
+                <outlet property="stackView" destination="HTf-mv-WTY" id="aWj-0a-Pms"/>
                 <outlet property="videoPlayerView" destination="GTz-PM-MfI" id="w5A-aQ-iTy"/>
             </connections>
         </view>

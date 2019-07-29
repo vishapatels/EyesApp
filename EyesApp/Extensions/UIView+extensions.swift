@@ -34,6 +34,7 @@ extension UIView {
     ///   - radius: The blur radius (in points) used to render the layer’s shadow. Animatable.
     ///   - offset: The offset (in points) of the layer’s shadow. Animatable.
     func addShadow(color: UIColor, opacity: Float, radius: CGFloat? = nil, offset: CGSize? = nil) {
+        layer.masksToBounds = false
         if let offset = offset {
             layer.shadowOffset = offset
         }
@@ -44,8 +45,10 @@ extension UIView {
         
         layer.shadowColor = color.cgColor
         layer.shadowOpacity = opacity
+        let backgroundCGColor = backgroundColor?.cgColor
+        backgroundColor = nil
+        layer.backgroundColor =  backgroundCGColor
     }
-    
     /// Round corners of a view with given radius value
     ///
     /// - Parameter
@@ -56,4 +59,17 @@ extension UIView {
         layer.maskedCorners = corners
     }
     
+    /// Adds gradient to the view.
+    ///
+    /// - Parameters:
+    ///   - colors: the gradient colors
+    ///   - locations: the gradient stops
+    ///   - Returns: Nothing - only applies gradient to the view
+    public func applyGradient(colors:[UIColor], locations:[NSNumber], edgeInset: UIEdgeInsets = .zero) -> Void {
+        let gradientLayer: CAGradientLayer = CAGradientLayer()
+        gradientLayer.frame = CGRect(x: bounds.origin.x + edgeInset.left, y: bounds.origin.y + edgeInset.top, width: bounds.size.width - edgeInset.left + edgeInset.right, height: bounds.size.height - edgeInset.top + edgeInset.bottom)
+        gradientLayer.colors = colors.map { $0.cgColor }
+        gradientLayer.locations = locations
+        layer.insertSublayer(gradientLayer, at: 0)
+    }
 }

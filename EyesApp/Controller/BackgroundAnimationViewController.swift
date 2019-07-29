@@ -71,7 +71,7 @@ extension BackgroundAnimationViewController: KolodaViewDelegate {
     }
     
     func kolodaShouldApplyAppearAnimation(_ koloda: KolodaView) -> Bool {
-        return true
+        return false
     }
     
     func kolodaShouldMoveBackgroundCard(_ koloda: KolodaView) -> Bool {
@@ -79,7 +79,7 @@ extension BackgroundAnimationViewController: KolodaViewDelegate {
     }
     
     func kolodaShouldTransparentizeNextCard(_ koloda: KolodaView) -> Bool {
-        return true
+        return false
     }
     
     func koloda(kolodaBackgroundCardAnimation koloda: KolodaView) -> POPPropertyAnimation? {
