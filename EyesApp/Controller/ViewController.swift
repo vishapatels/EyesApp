@@ -50,7 +50,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserList", for: indexPath) as! UsersListCell
         cell.userNameLbl.text = model.usersAtIndex(atIndex: indexPath.row)?.name
         if let url = URL(string: model.usersAtIndex(atIndex: indexPath.row)?.image ?? "NA") {
-            cell.imageLbl.kf.setImage(with: url)
+        cell.userImageView.imageView.kf.setImage(with: url)
         }
         return cell
     }

@@ -24,6 +24,7 @@
 		1027798E22ECF35B0060E060 /* UserDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1027798D22ECF35B0060E060 /* UserDetailsView.xib */; };
 		1027799122EE9F1F0060E060 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1027799022EE9F1F0060E060 /* GradientView.swift */; };
 		102779B122EEAB280060E060 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102779B022EEAB280060E060 /* UserDetailsViewController.swift */; };
+		102779B322EF7FE70060E060 /* SwiftShadowImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102779B222EF7FE60060E060 /* SwiftShadowImageView.swift */; };
 		1037EBA222E7A334001BBC89 /* DetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1037EBA122E7A334001BBC89 /* DetailViewCell.swift */; };
 		107361AA22E6A2DB009E2B67 /* EyesApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 107361A822E6A2DB009E2B67 /* EyesApp.xcdatamodeld */; };
 		107361AD22E6A44E009E2B67 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107361AC22E6A44E009E2B67 /* CoreDataManager.swift */; };
@@ -81,6 +82,7 @@
 		1027798D22ECF35B0060E060 /* UserDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailsView.xib; sourceTree = "<group>"; };
 		1027799022EE9F1F0060E060 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		102779B022EEAB280060E060 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
+		102779B222EF7FE60060E060 /* SwiftShadowImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftShadowImageView.swift; sourceTree = "<group>"; };
 		1037EBA122E7A334001BBC89 /* DetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCell.swift; sourceTree = "<group>"; };
 		107361A922E6A2DB009E2B67 /* EyesApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EyesApp.xcdatamodel; sourceTree = "<group>"; };
 		107361AC22E6A44E009E2B67 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -293,12 +295,13 @@
 		108B1BD222E61A5B002BDF8E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				102779B222EF7FE60060E060 /* SwiftShadowImageView.swift */,
+				10B2D07522E7C6130081C57C /* Loading */,
 				1027798F22EE9F1F0060E060 /* GradientView */,
 				1027798122ECDFBC0060E060 /* CustomKolodaView.swift */,
 				1037EBA122E7A334001BBC89 /* DetailViewCell.swift */,
 				1027795E22EB7EF00060E060 /* DetailViewCell.xib */,
 				108B1BE522E642F4002BDF8E /* UsersListCell.swift */,
-				10B2D07522E7C6130081C57C /* Loading */,
 				10B5AC2322E67B8100B008BE /* Main.storyboard */,
 				1027798B22ECF3420060E060 /* UserDetailsView.swift */,
 				1027798D22ECF35B0060E060 /* UserDetailsView.xib */,
@@ -519,6 +522,7 @@
 				108B1BC822E619AC002BDF8E /* CoreServiceCodable.swift in Sources */,
 				1037EBA222E7A334001BBC89 /* DetailViewCell.swift in Sources */,
 				1027797522EC10070060E060 /* Direction.swift in Sources */,
+				102779B322EF7FE70060E060 /* SwiftShadowImageView.swift in Sources */,
 				108B1BD822E61D0D002BDF8E /* UserListViewModel.swift in Sources */,
 				1027799122EE9F1F0060E060 /* GradientView.swift in Sources */,
 				1027797A22EC10070060E060 /* Animation.swift in Sources */,
