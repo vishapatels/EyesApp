@@ -30,7 +30,7 @@ final class UserDetailsView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         stackView.setRound(withRadius: 20)
-        applyGradientLayer()
+
     }
     
     static func create(type: MediaType, content: String) -> UserDetailsView {
@@ -107,5 +107,9 @@ extension UIColor {
     }
     @nonobjc class var easterPurple: UIColor {
         return UIColor(red: 171.0 / 255.0, green: 108.0 / 255.0, blue: 1.0, alpha: 1.0)
+    }
+    
+    @nonobjc class var overalayColor: UIColor {
+        return UIColor(red: 0.0 / 255.0, green: 0 / 255.0, blue: 0 / 255.0, alpha: 0.2)
     }
 }

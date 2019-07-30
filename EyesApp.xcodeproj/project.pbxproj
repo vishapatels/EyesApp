@@ -17,9 +17,6 @@
 		1027797822EC10070060E060 /* ViewAnimatorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1027796D22EC10070060E060 /* ViewAnimatorConfig.swift */; };
 		1027797922EC10070060E060 /* ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1027796E22EC10070060E060 /* ViewAnimator.swift */; };
 		1027797A22EC10070060E060 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1027797022EC10070060E060 /* Animation.swift */; };
-		1027797F22ECDF8D0060E060 /* BackgroundKolodaAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1027797D22ECDF8D0060E060 /* BackgroundKolodaAnimator.swift */; };
-		1027798022ECDF8D0060E060 /* BackgroundAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1027797E22ECDF8D0060E060 /* BackgroundAnimationViewController.swift */; };
-		1027798222ECDFBC0060E060 /* CustomKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1027798122ECDFBC0060E060 /* CustomKolodaView.swift */; };
 		1027798C22ECF3420060E060 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1027798B22ECF3420060E060 /* UserDetailsView.swift */; };
 		1027798E22ECF35B0060E060 /* UserDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1027798D22ECF35B0060E060 /* UserDetailsView.xib */; };
 		1027799122EE9F1F0060E060 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1027799022EE9F1F0060E060 /* GradientView.swift */; };
@@ -75,9 +72,6 @@
 		1027796D22EC10070060E060 /* ViewAnimatorConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAnimatorConfig.swift; sourceTree = "<group>"; };
 		1027796E22EC10070060E060 /* ViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAnimator.swift; sourceTree = "<group>"; };
 		1027797022EC10070060E060 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
-		1027797D22ECDF8D0060E060 /* BackgroundKolodaAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundKolodaAnimator.swift; sourceTree = "<group>"; };
-		1027797E22ECDF8D0060E060 /* BackgroundAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundAnimationViewController.swift; sourceTree = "<group>"; };
-		1027798122ECDFBC0060E060 /* CustomKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKolodaView.swift; sourceTree = "<group>"; };
 		1027798B22ECF3420060E060 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 		1027798D22ECF35B0060E060 /* UserDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailsView.xib; sourceTree = "<group>"; };
 		1027799022EE9F1F0060E060 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -283,8 +277,6 @@
 		108B1BD122E61A54002BDF8E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1027797E22ECDF8D0060E060 /* BackgroundAnimationViewController.swift */,
-				1027797D22ECDF8D0060E060 /* BackgroundKolodaAnimator.swift */,
 				108B1BB622E6190E002BDF8E /* ViewController.swift */,
 				107F514722E69F740076517B /* DetailViewController.swift */,
 				102779B022EEAB280060E060 /* UserDetailsViewController.swift */,
@@ -298,7 +290,6 @@
 				102779B222EF7FE60060E060 /* SwiftShadowImageView.swift */,
 				10B2D07522E7C6130081C57C /* Loading */,
 				1027798F22EE9F1F0060E060 /* GradientView */,
-				1027798122ECDFBC0060E060 /* CustomKolodaView.swift */,
 				1037EBA122E7A334001BBC89 /* DetailViewCell.swift */,
 				1027795E22EB7EF00060E060 /* DetailViewCell.xib */,
 				108B1BE522E642F4002BDF8E /* UsersListCell.swift */,
@@ -490,15 +481,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1027798222ECDFBC0060E060 /* CustomKolodaView.swift in Sources */,
 				10B2D07B22E7C6E50081C57C /* UIView+extensions.swift in Sources */,
-				1027798022ECDF8D0060E060 /* BackgroundAnimationViewController.swift in Sources */,
 				108B1BD622E61C51002BDF8E /* UserListManager.swift in Sources */,
 				1027797622EC10070060E060 /* UITableView + ViewAnimator.swift in Sources */,
 				108B1BB722E6190E002BDF8E /* ViewController.swift in Sources */,
 				108B1BB322E6190E002BDF8E /* AppDelegate.swift in Sources */,
 				107361AA22E6A2DB009E2B67 /* EyesApp.xcdatamodeld in Sources */,
-				1027797F22ECDF8D0060E060 /* BackgroundKolodaAnimator.swift in Sources */,
 				10B2D07E22E7C74C0081C57C /* NibFileLoadable.swift in Sources */,
 				107361AD22E6A44E009E2B67 /* CoreDataManager.swift in Sources */,
 				10B2D07922E7C6130081C57C /* LoadingView.swift in Sources */,

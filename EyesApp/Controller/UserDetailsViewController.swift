@@ -9,10 +9,13 @@
 import UIKit
 import Koloda
 
+class CustomKolodaView: KolodaView {}
+
 class UserDetailsViewController: UIViewController {
     
-    @IBOutlet weak var myKolodaView: StaticKolodaView!
+    @IBOutlet weak var myKolodaView: CustomKolodaView!
     
+    @IBOutlet weak var overlayView: UIView!
     var id: Int64 = 0
     private let model = UserDetailViewModel()
     override func viewDidLoad() {
@@ -21,7 +24,7 @@ class UserDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
         myKolodaView.dataSource = self
         myKolodaView.delegate = self
-        
+        //overlayView.backgroundColor = .overalayColor
         self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
         
         model.getUserDetail(id: id,ignoreCache: true, completion: { [weak self] (result) in
