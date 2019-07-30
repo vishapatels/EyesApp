@@ -2,7 +2,7 @@
 //  UITableView + ViewAnimator.swift
 //  ViewAnimator
 //
-//  Created by Marcos Griselli on 15/04/2018.
+//  Created by Visha Shanghvi on 2019-07-29.
 //
 
 import Foundation

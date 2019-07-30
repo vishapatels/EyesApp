@@ -2,7 +2,7 @@
 //  Animation.swift
 //  Pods-ViewAnimator_Example
 //
-//  Created by Marcos Griselli on 10/16/17.
+//  Created by Visha Shanghvi on 2019-07-29.
 //
 
 import UIKit

@@ -2,7 +2,7 @@
 //  ViewAnimator.swift
 //  Pods-ViewAnimator_Example
 //
-//  Created by Marcos Griselli on 10/5/17.
+//  Created by Visha Shanghvi on 2019-07-29.
 //
 
 import Foundation
