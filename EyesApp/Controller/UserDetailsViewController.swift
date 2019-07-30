@@ -8,15 +8,23 @@
 
 import UIKit
 import Koloda
+import Hero
 
+enum HeroIdentifier: String {
+    
+    case detailHeroImage
+}
 class CustomKolodaView: KolodaView {}
 
 class UserDetailsViewController: UIViewController {
     
+    @IBOutlet weak var heroImageView: UIImageView!
     @IBOutlet weak var myKolodaView: CustomKolodaView!
+
+    var id: Int64 = 0
+    var urlString: String?
     
     @IBOutlet weak var overlayView: UIView!
-    var id: Int64 = 0
     private let model = UserDetailViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +32,13 @@ class UserDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
         myKolodaView.dataSource = self
         myKolodaView.delegate = self
+        heroImageView.hero.id = HeroIdentifier.detailHeroImage.rawValue
+        overlayView.alpha = 0.5
+        if let urlString = urlString, let url = URL(string: urlString) {
+            heroImageView.kf.setImage(with: url)
+        }
         //overlayView.backgroundColor = .overalayColor
-        self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+        self.modalTransitionStyle =  UIModalTransitionStyle.flipHorizontal
         
         model.getUserDetail(id: id,ignoreCache: true, completion: { [weak self] (result) in
             self?.removeLoadingView()

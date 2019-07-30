@@ -30,7 +30,7 @@ final class UserDetailsView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         stackView.setRound(withRadius: 20)
-
+        setRound(withRadius: 20)
     }
     
     static func create(type: MediaType, content: String) -> UserDetailsView {

@@ -8,6 +8,7 @@
 
 import Kingfisher
 import UIKit
+import Hero
 
 final class ViewController: UIViewController {
 
@@ -48,9 +49,11 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserList", for: indexPath) as! UsersListCell
+        cell.userImageView.imageView.image = nil
         cell.userNameLbl.text = model.usersAtIndex(atIndex: indexPath.row)?.name
         if let url = URL(string: model.usersAtIndex(atIndex: indexPath.row)?.image ?? "NA") {
-        cell.userImageView.imageView.kf.setImage(with: url)
+            cell.userImageView.imageView.kf.setImage(with: url)
+            cell.userImageView.hero.id = HeroIdentifier.detailHeroImage.rawValue
         }
         return cell
     }
@@ -58,6 +61,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let animationVC = storyboard?.instantiateViewController(withIdentifier: "UserDetailsViewController") as! UserDetailsViewController
         animationVC.id = model.usersAtIndex(atIndex: indexPath.row)?.id ?? 0
+        animationVC.urlString = model.usersAtIndex(atIndex: indexPath.row)?.image
         navigationController?.pushViewController(animationVC, animated: true)
     }
 }
